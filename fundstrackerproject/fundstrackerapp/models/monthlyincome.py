@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class MonthlyIncome (models.Model):
 
     name = models.CharField(max_length=50)
-    total = models.DecimalField(max_digits=None, decimal_places=2)
+    total = models.DecimalField(max_digits=7, decimal_places=2)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
