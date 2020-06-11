@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from fundstrackerproject.fundstrackerapp.models import *
+from fundstrackerapp.models import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
