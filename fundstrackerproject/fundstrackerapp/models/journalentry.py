@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class JournalEntry (models.Model):
 
     entry = models.CharField(max_length=250)
-    user = models.ManyToOneRel(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = ("journal entry")
