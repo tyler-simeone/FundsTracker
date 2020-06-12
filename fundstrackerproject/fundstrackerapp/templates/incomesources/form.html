@@ -8,6 +8,12 @@
 
 {% block content %}
 
+{% if income_source.id is not None %}
+    <form action="{% url 'fundstrackerapp:income_source' income_source.id %}" method="post">
+        <input type="hidden" name="actual_method" value="PUT">
+{% else %}
+    <form action="{% url 'fundstrackerapp:account' %}" method="post">
+{% endif %}
     <form action="{% url 'fundstrackerapp:account' %}" method="post">
       {% csrf_token %}
       <fieldset>
@@ -21,4 +27,5 @@
 
        <input type="submit" value="Submit" />
     </form>
+
 {% endblock %}
