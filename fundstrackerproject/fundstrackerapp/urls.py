@@ -10,4 +10,7 @@ urlpatterns = [
     path('logout/', logout_user, name='logout'),
     path('', net_income_list, name='home'),
     path('incomecalculation/', net_income_details, name='netincome_details'),
+    # Below endpoint will trigger when Account page is viewed
+    path('account/', income_list, name='account'),
+    # path('incomes/add/', add_income, name='income_form'),
 ]

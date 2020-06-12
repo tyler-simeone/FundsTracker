@@ -1,0 +1,32 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/incomelist.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <div>
+        <section class="user_info">
+            <img />
+            <div class="name_container">
+                <h2>Name:</h2>
+                <p>{{ user.first_name }} {{ user.last_name }}</p>
+            </div>
+            <div class="username_container">
+                <h2>Username:</h2>
+                <p>{{ user.username }}</p>
+            </div>
+        </section>
+
+        <section class="income_sources">
+            <h1>Income Sources:</h1>
+            <ul>
+                {% for income in all_incomes %}
+                <li>{{ income.name }}: {{ income.total }}</li>
+                {% endfor %}
+            </ul>
+            {% comment %} <a href="{% url 'fundstrackerapp:income_form' %}"><button>Add Income Source</button></a> {% endcomment %}
+        </section>
+    <div>
+{% endblock %}
