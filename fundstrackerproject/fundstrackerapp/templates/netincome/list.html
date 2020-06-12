@@ -1,0 +1,13 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/netincome.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <div>
+        <h1>Expected Net Income:</h1>
+        <div class="net_income__total">{{ net_income }}</div>
+    <div>
+{% endblock %}

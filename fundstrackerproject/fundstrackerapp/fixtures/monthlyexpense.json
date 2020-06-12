@@ -1,0 +1,29 @@
+[
+    {
+      "pk": 1,
+      "model": "fundstrackerapp.monthlyexpense",
+      "fields": {
+        "name": "Mortgage",
+        "total": 1500.00,
+        "user_id": 1
+      }
+    },
+    {
+      "pk": 2,
+      "model": "fundstrackerapp.monthlyexpense",
+      "fields": {
+        "name": "Home utilities",
+        "total": 500.75,
+        "user_id": 1
+      }
+    },
+    {
+      "pk": 3,
+      "model": "fundstrackerapp.monthlyexpense",
+      "fields": {
+        "name": "Home Insurance",
+        "total": 150.00,
+        "user_id": 1
+      }
+    }
+  ]
