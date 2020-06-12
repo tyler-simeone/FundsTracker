@@ -1,0 +1,27 @@
+{% block content %}
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <form action="{% url 'fundstrackerapp:register' %}" method="post">
+      {% csrf_token %}
+      <fieldset>
+          <label for="username">Username: </label>
+          <input id="username" type="text" name="username">
+      </fieldset>
+      <fieldset>
+          <label for="password">Password: </label>
+          <input id="password" type="password" name="password">
+      </fieldset>
+      <fieldset>
+          <label for="password_confirmation">Password Confirmation: </label>
+          <input id="password_confirmation" type="password" name="password_confirmation">
+      </fieldset>
+
+       <input type="submit" value="Submit" />
+    </form>
+{% endblock %}
