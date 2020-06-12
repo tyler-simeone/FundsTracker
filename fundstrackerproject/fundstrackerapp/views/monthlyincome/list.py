@@ -25,7 +25,7 @@ def income_list(request):
         new_income = MonthlyIncome.objects.create(
             name = form_data['name'],
             total = form_data['total'],
-            user_id = form_data['user']
+            user_id = request.user.id
         )        
 
         return redirect(reverse('fundstrackerapp:account'))
