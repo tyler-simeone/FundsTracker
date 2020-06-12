@@ -7,8 +7,10 @@
 
 {% block content %}
     <div>
-        <h1>Expected Net Income:</h1>
-        <div class="net_income__total">{{ net_income }}</div>
-        <a href="{% url 'fundstrackerapp:netincome_details' %}"><button>Details</button></a>
+        <section>
+            <h1>Expected Net Income:</h1>
+            <div class="net_income__total">{{ net_income }}</div>
+            <a href="{% url 'fundstrackerapp:netincome_details' %}"><button>Details</button></a>
+        </section>
     <div>
 {% endblock %}
