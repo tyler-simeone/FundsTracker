@@ -11,7 +11,7 @@ def income_list(request):
         all_incomes = MonthlyIncome.objects.filter(user=request.user.id)
         user = User.objects.get(pk=request.user.id)
 
-        template = 'monthlyincome/list.html'
+        template = 'incomesources/list.html'
         context = {
             'user': user,
             'all_incomes': all_incomes
@@ -28,4 +28,4 @@ def income_list(request):
             user_id = form_data['user']
         )        
 
-        # return redirect(reverse('fundstrackerapp:account'))
+        return redirect(reverse('fundstrackerapp:account'))
