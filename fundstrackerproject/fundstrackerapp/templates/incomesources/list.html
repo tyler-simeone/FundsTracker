@@ -26,7 +26,7 @@
                 <li>{{ income.name }}: {{ income.total }}</li>
                 {% endfor %}
             </ul>
-            {% comment %} <a href="{% url 'fundstrackerapp:income_form' %}"><button>Add Income Source</button></a> {% endcomment %}
+            <a href="{% url 'fundstrackerapp:income_form' %}"><button>Add Income Source</button></a>
         </section>
     <div>
 {% endblock %}
