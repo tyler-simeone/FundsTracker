@@ -1,0 +1,32 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/netincome.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <div>
+        <section>
+            <h1>Expected Net Income:</h1>
+            <div class="net_income__total">{{ net_income }}</div>
+        </section>
+
+        <section class="calculations">
+            <h1>How It's Calculated:</h1>
+            <div class="gross_income">
+                <h2>Gross Monthly Income:</h2>
+                <span>${{ total_income }}</span>
+            </div>
+            <div class="gross_expenses">
+                <h2>Total Monthly Expenses:</h2>
+                <span>${{ total_expense }}</span>
+            </div>
+        </section>
+
+        <section class="result">
+            <h1>Expected Net Income:</h1>
+            <div class="net_income__total">{{ net_income }}</div>
+        </section>
+    <div>
+{% endblock %}
