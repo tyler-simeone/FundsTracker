@@ -22,7 +22,7 @@ def register(request):
             user = authenticate(request, username=form_data['username'], password=form_data['password'])
             if user is not None:
                 login(request, user)
-                # return redirect(reverse('fundstrackerapp:home'))
+                return redirect(reverse('fundstrackerapp:home'))
 
         except Exception as e:
             messages.error(request, f'{type(e)}: {e}')
