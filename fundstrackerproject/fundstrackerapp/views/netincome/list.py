@@ -4,7 +4,9 @@ from fundstrackerapp.models import MonthlyIncome, MonthlyExpense
 
 @login_required
 def net_income_list(request):
+
     if request.method == 'GET':
+        
         all_incomes = MonthlyIncome.objects.filter(user=request.auth.user.id)
         all_expenses = MonthlyExpense.objects.filter(user=request.auth.user.id)
 
@@ -19,4 +21,9 @@ def net_income_list(request):
 
         net_income = total_income - total_expense
 
-        template = ''
+        template = 'netincome/list.html'
+        context = {
+            'net_income': net_income
+        }
+
+        return render(request, template, context)
