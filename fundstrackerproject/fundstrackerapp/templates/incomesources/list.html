@@ -38,5 +38,25 @@
             </ul>
             <a href="{% url 'fundstrackerapp:income_form' %}"><button>Add Income Source</button></a>
         </section>
+
+        <section class="monthly_expenses">
+            <h1>Monthly Expenses:</h1>
+            <ul>
+                {% for expense in all_expenses %}
+                <div class="monthly_expense__container">
+                    {% comment %} <a href="{% url 'fundstrackerapp:expense_edit_form' income.id %}"> {% endcomment %}
+                        <li>{{ expense.name }}: {{ expense.total }}</li>
+                    {% comment %} </a> {% endcomment %}
+                    
+                    {% comment %} <form action="{% url 'fundstrackerapp:expense_details' income.id %}" method="POST"> {% endcomment %}
+                        {% comment %} {% csrf_token %} {% endcomment %}
+                        {% comment %} <input type="hidden" name="actual_method" value="DELETE" /> {% endcomment %}
+                        <button onclick="return confirm('Are you sure?');">Delete</button>
+                    {% comment %} </form> {% endcomment %}
+                </div>
+                {% endfor %}
+            </ul>
+            <a href="{% url 'fundstrackerapp:expense_form' %}"><button>Add Expense</button></a>
+        </section>
     <div>
 {% endblock %}
