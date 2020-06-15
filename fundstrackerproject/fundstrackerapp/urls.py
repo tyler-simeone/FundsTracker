@@ -12,6 +12,6 @@ urlpatterns = [
     path('incomecalculation/', net_income_details, name='netincome_details'),
     path('account/', income_list, name='account'),
     path('account/addincome/', income_form, name='income_form'),
-    path('account/updateincome/', income_edit_form, name='income_edit_form'),
-    # path('account/<int:income_source_id>/', income_edit_form, name='income_source'),
+    path('account/updateincome/<int:income_id>/', income_edit_form, name='income_edit_form'),
+    path('account/<int:income_id>/', income_details, name='income_source'),
 ]
