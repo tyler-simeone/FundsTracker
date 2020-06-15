@@ -18,11 +18,11 @@ def expense_form(request):
 def expense_edit_form(request, expense_id):
 
     if request.method == 'GET':
-        income_source = MonthlyExpense.objects.get(pk=income_id)
+        expense = MonthlyExpense.objects.get(pk=expense_id)
 
-        template = 'incomesources/form.html'
+        template = 'expenses/form.html'
         context = {
-            'income_source': income_source
+            'expense': expense
         }
 
         return render(request, template, context)

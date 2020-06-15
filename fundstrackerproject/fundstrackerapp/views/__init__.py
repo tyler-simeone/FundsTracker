@@ -7,3 +7,4 @@ from .monthlyincome.list import income_list
 from .monthlyincome.form import income_form, income_edit_form
 from .monthlyincome.details import income_details
 from .monthlyexpense.form import expense_form, expense_edit_form
+from .monthlyexpense.details import expense_details
