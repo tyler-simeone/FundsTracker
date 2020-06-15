@@ -14,15 +14,15 @@ def expense_form(request):
 
         return render(request, template, context)
       
-# @login_required
-# def income_edit_form(request, income_id):
+@login_required
+def expense_edit_form(request, expense_id):
 
-#     if request.method == 'GET':
-#         income_source = MonthlyExpense.objects.get(pk=income_id)
+    if request.method == 'GET':
+        income_source = MonthlyExpense.objects.get(pk=income_id)
 
-#         template = 'incomesources/form.html'
-#         context = {
-#             'income_source': income_source
-#         }
+        template = 'incomesources/form.html'
+        context = {
+            'income_source': income_source
+        }
 
-#         return render(request, template, context)
+        return render(request, template, context)
