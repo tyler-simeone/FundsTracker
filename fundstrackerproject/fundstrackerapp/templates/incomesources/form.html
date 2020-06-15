@@ -1,0 +1,31 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/incomeform.css' %}" />
+{% endblock %}
+
+
+{% block content %}
+
+{% if income_source.id is not None %}
+    <form action="{% url 'fundstrackerapp:income_source' income_source.id %}" method="post">
+        <input type="hidden" name="actual_method" value="PUT">
+{% else %}
+    <form action="{% url 'fundstrackerapp:account' %}" method="post">
+{% endif %}
+    <form action="{% url 'fundstrackerapp:account' %}" method="post">
+      {% csrf_token %}
+      <fieldset>
+          <label for="name">Name: </label>
+          <input id="name" type="text" name="name">
+      </fieldset>
+      <fieldset>
+          <label for="total">Total Income: </label>
+          <input id="total" type="text" name="total">
+      </fieldset>
+
+       <input type="submit" value="Submit" />
+    </form>
+
+{% endblock %}
