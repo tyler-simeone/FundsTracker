@@ -7,11 +7,17 @@ from django.contrib.auth.decorators import login_required
 def goal_list(request):
 
     if request.method == 'GET':
-        goals = FinancialGoal.objects.get(user=request.user.id)
+        one_month_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=1)
+        three_month_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=3)
+        six_month_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=6)
+        twelve_month_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=12)
 
         template = 'goals/list.html'
         context = {
-            'goals': goals
+            'one_month_goals': one_month_goals,
+            'three_month_goals': three_month_goals,
+            'six_month_goals': six_month_goals,
+            'twelve_month_goals': twelve_month_goals
         }
 
         return render(request, template, context)

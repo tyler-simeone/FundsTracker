@@ -13,8 +13,35 @@
             <section class="one_month_goals">
                 <h1>1 Month</h1>
                 <ul>
-                    {% for goal in goals %}
-                    <li>{{ goal.name }}</li>
+                    {% for goal in one_month_goals %}
+                    <li>{{ goal.goal }}</li>
+                    {% endfor %}
+                </ul>
+            </section>
+
+            <section class="three_month_goals">
+                <h1>3 Month</h1>
+                <ul>
+                    {% for goal in three_month_goals %}
+                    <li>{{ goal.goal }}</li>
+                    {% endfor %}
+                </ul>
+            </section>
+
+            <section class="six_month_goals">
+                <h1>6 Month</h1>
+                <ul>
+                    {% for goal in six_month_goals %}
+                    <li>{{ goal.goal }}</li>
+                    {% endfor %}
+                </ul>
+            </section>
+
+            <section class="twelve_month_goals">
+                <h1>12 Month</h1>
+                <ul>
+                    {% for goal in twelve_month_goals %}
+                    <li>{{ goal.goal }}</li>
                     {% endfor %}
                 </ul>
             </section>
