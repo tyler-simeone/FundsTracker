@@ -1,0 +1,47 @@
+[
+    {
+        "pk": 1,
+        "model": "fundstrackerapp.financialgoal",
+        "fields": {
+            "goal": "Decrease Expense 1",
+            "timeframe": 1,
+            "user_id": 1
+        }
+    },
+    {
+        "pk": 2,
+        "model": "fundstrackerapp.financialgoal",
+        "fields": {
+            "goal": "Hit Monthly Income Target",
+            "timeframe": 1,
+            "user_id": 1
+        }
+    },
+    {
+        "pk": 3,
+        "model": "fundstrackerapp.financialgoal",
+        "fields": {
+            "goal": "Start an Emergency Fund",
+            "timeframe": 3,
+            "user_id": 1
+        }
+    },
+    {
+        "pk": 4,
+        "model": "fundstrackerapp.financialgoal",
+        "fields": {
+            "goal": "100% Funded Emergency Fund",
+            "timeframe": 6,
+            "user_id": 1
+        }
+    },
+    {
+        "pk": 5,
+        "model": "fundstrackerapp.financialgoal",
+        "fields": {
+            "goal": "50% Debt-Free",
+            "timeframe": 12,
+            "user_id": 1
+        }
+    }
+]
