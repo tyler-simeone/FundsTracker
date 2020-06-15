@@ -1,0 +1,30 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/expenseform.css' %}" />
+{% endblock %}
+
+
+{% block content %}
+
+{% comment %} {% if expense.id is not None %}
+    <form action="{% url 'fundstrackerapp:expense_details' expense.id %}" method="post">
+        <input type="hidden" name="actual_method" value="PUT">
+{% else %} {% endcomment %}
+    <form action="{% url 'fundstrackerapp:account' %}" method="post">
+{% comment %} {% endif %} {% endcomment %}
+      {% csrf_token %}
+      <fieldset>
+          <label for="name">Name:</label>
+          <input id="name" type="text" name="name" value="{{ expense.name }}" />
+      </fieldset>
+      <fieldset>
+          <label for="total">Cost: </label>
+          <input id="total" type="text" name="total" value="{{ expense.total }}" />
+      </fieldset>
+
+       <input type="submit" value="Submit" />
+    </form>
+
+{% endblock %}
