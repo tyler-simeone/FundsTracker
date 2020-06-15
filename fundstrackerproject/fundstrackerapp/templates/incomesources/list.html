@@ -23,7 +23,7 @@
             <h1>Income Sources:</h1>
             <ul>
                 {% for income in all_incomes %}
-                <a href="{% url 'fundstrackerapp:income_edit_form' income.id %}" method="GET">
+                <a href="{% url 'fundstrackerapp:income_edit_form' income.id %}">
                     <li>{{ income.name }}: {{ income.total }}</li>
                 </a>
                 
