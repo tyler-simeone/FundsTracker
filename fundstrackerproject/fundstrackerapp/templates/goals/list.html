@@ -1,0 +1,23 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/goals.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <div>
+        <h1>Goals</h1>
+
+        <div class="goals__container">
+            <section class="one_month_goals">
+                <h1>1 Month</h1>
+                <ul>
+                    {% for goal in goals %}
+                    <li>{{ goal.name }}</li>
+                    {% endfor %}
+                </ul>
+            </section>
+        </div>
+    <div>
+{% endblock %}
