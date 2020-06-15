@@ -13,7 +13,6 @@ def expense_details(request, expense_id):
 
     if request.method == 'POST':
         form_data = request.POST
-        print(f'XXXXXXXXXX {monthly_expense} XXXXXXXXXX')
 
         if (
             "actual_method" in form_data

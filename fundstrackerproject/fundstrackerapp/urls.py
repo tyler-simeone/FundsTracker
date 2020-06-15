@@ -16,5 +16,5 @@ urlpatterns = [
     path('account/<int:income_id>/', income_details, name='income_source'),
     path('account/addexpense/', expense_form, name='expense_form'),
     path('account/updateexpense/<int:expense_id>/', expense_edit_form, name='expense_edit_form'),
-    path('account/<int:expense_id>/', expense_details, name='expense_details'),
+    path('account/expense/<int:expense_id>/', expense_details, name='expense_details'),
 ]
