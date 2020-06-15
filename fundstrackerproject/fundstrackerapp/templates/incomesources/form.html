@@ -17,7 +17,6 @@ do we need to see the details {% endcomment %}
 {% else %}
     <form action="{% url 'fundstrackerapp:account' %}" method="post">
 {% endif %}
-    {% comment %} <form action="{% url 'fundstrackerapp:account' %}" method="post"> {% endcomment %}
       {% csrf_token %}
       <fieldset>
           <label for="name">Name:</label>
@@ -25,7 +24,7 @@ do we need to see the details {% endcomment %}
       </fieldset>
       <fieldset>
           <label for="total">Total Income: </label>
-          <input id="total" type="text" name="total" value={{ income_source.total }} />
+          <input id="total" type="text" name="total" value="{{ income_source.total }}" />
       </fieldset>
 
        <input type="submit" value="Submit" />
