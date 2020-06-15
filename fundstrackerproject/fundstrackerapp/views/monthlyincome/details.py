@@ -16,6 +16,14 @@ def income_details(request, income_id):
 
         if (
             "actual_method" in form_data
+            and form_data["actual_method"] == "DELETE"
+        ):
+            income_source.delete()
+
+            return redirect(reverse('fundstrackerapp:account'))
+            
+        if (
+            "actual_method" in form_data
             and form_data["actual_method"] == "PUT"
         ):
             income_source.name = form_data['name']
@@ -23,3 +31,5 @@ def income_details(request, income_id):
             income_source.save()
 
             return redirect(reverse('fundstrackerapp:account'))
+
+            

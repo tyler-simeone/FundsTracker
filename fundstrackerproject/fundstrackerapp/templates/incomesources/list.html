@@ -23,9 +23,17 @@
             <h1>Income Sources:</h1>
             <ul>
                 {% for income in all_incomes %}
-                <a href="{% url 'fundstrackerapp:income_edit_form' income.id %}" method="GET">
-                    <li>{{ income.name }}: {{ income.total }}</li>
-                </a>
+                <div class="income_source__container">
+                    <a href="{% url 'fundstrackerapp:income_edit_form' income.id %}">
+                        <li>{{ income.name }}: {{ income.total }}</li>
+                    </a>
+                    
+                    <form action="{% url 'fundstrackerapp:income_source' income.id %}" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="actual_method" value="DELETE" />
+                        <button onclick="return confirm('Are you sure?');">Delete</button>
+                    </form>
+                </div>
                 {% endfor %}
             </ul>
             <a href="{% url 'fundstrackerapp:income_form' %}"><button>Add Income Source</button></a>
