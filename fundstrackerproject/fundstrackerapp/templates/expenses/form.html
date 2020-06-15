@@ -8,12 +8,12 @@
 
 {% block content %}
 
-{% comment %} {% if expense.id is not None %}
+{% if expense.id is not None %}
     <form action="{% url 'fundstrackerapp:expense_details' expense.id %}" method="post">
         <input type="hidden" name="actual_method" value="PUT">
-{% else %} {% endcomment %}
+{% else %}
     <form action="{% url 'fundstrackerapp:account' %}" method="post">
-{% comment %} {% endif %} {% endcomment %}
+{% endif %}
       {% csrf_token %}
       <input type="hidden" name="expense"/>
       <fieldset>

@@ -4,7 +4,7 @@ from .home import home
 from .netincome.list import net_income_list
 from .netincome.details import net_income_details
 from .monthlyincome.list import income_list
-from .monthlyincome.form import income_form
-from .monthlyincome.form import income_edit_form
+from .monthlyincome.form import income_form, income_edit_form
 from .monthlyincome.details import income_details
-from .monthlyexpense.form import expense_form
+from .monthlyexpense.form import expense_form, expense_edit_form
+from .monthlyexpense.details import expense_details

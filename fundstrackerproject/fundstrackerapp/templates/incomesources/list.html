@@ -44,9 +44,9 @@
             <ul>
                 {% for expense in all_expenses %}
                 <div class="monthly_expense__container">
-                    {% comment %} <a href="{% url 'fundstrackerapp:expense_edit_form' income.id %}"> {% endcomment %}
+                    <a href="{% url 'fundstrackerapp:expense_edit_form' expense.id %}">
                         <li>{{ expense.name }}: {{ expense.total }}</li>
-                    {% comment %} </a> {% endcomment %}
+                    </a>
                     
                     {% comment %} <form action="{% url 'fundstrackerapp:expense_details' income.id %}" method="POST"> {% endcomment %}
                         {% comment %} {% csrf_token %} {% endcomment %}
