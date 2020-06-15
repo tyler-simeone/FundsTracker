@@ -6,3 +6,4 @@ from .netincome.details import net_income_details
 from .monthlyincome.list import income_list
 from .monthlyincome.form import income_form
 from .monthlyincome.form import income_edit_form
+from .monthlyincome.details import income_details

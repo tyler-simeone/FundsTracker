@@ -13,5 +13,5 @@ urlpatterns = [
     path('account/', income_list, name='account'),
     path('account/addincome/', income_form, name='income_form'),
     path('account/updateincome/<int:income_id>/', income_edit_form, name='income_edit_form'),
-    path('account/<int:income_source_id>/', income_edit_form, name='income_source'),
+    path('account/<int:income_id>/', income_details, name='income_source'),
 ]
