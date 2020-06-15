@@ -51,7 +51,7 @@
                     {% comment %} <form action="{% url 'fundstrackerapp:expense_details' income.id %}" method="POST"> {% endcomment %}
                         {% comment %} {% csrf_token %} {% endcomment %}
                         {% comment %} <input type="hidden" name="actual_method" value="DELETE" /> {% endcomment %}
-                        <button onclick="return confirm('Are you sure?');">Delete</button>
+                        {% comment %} <button onclick="return confirm('Are you sure?');">Delete</button> {% endcomment %}
                     {% comment %} </form> {% endcomment %}
                 </div>
                 {% endfor %}
