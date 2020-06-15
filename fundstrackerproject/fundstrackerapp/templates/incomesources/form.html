@@ -8,9 +8,6 @@
 
 {% block content %}
 
-{% comment %} CONSIDER: Putting conditional for a PUT req
-inside the account view just like regular POST (b/c at no point)
-do we need to see the details {% endcomment %}
 {% if income_source.id is not None %}
     <form action="{% url 'fundstrackerapp:income_source' income_source.id %}" method="post">
         <input type="hidden" name="actual_method" value="PUT">
