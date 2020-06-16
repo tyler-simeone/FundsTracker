@@ -19,4 +19,6 @@ urlpatterns = [
     path('account/expense/<int:expense_id>/', expense_details, name='expense_details'),
     path('goals/', goal_list, name='goals'),
     path('goals/addgoal', goal_form, name='goal_form'),
+    # path('goals/<int:goal_id>/editgoal', goal_edit_form, name='goal_edit_form'),
+    # path('goals/<int:goal_id>', goal_details, name='goal_details'),
 ]
