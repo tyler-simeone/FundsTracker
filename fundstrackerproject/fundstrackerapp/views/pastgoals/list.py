@@ -23,6 +23,7 @@ def past_goals_list(request):
             # creating expiration dates for the goal
             exp_month = goal_created_month + goal.timeframe
             exp_year = int(goal_created_date[0])
+    
 
             # updating the year if the expiration month is past Dec.
             if (exp_month > 12):
@@ -118,7 +119,7 @@ def past_goals_list(request):
             if ((exp_month < current_month) and (exp_year <= current_year)):
                 past_twelve_month_goals.append(goal)
 
-        template = 'goals/list.html'
+        template = 'pastgoals/list.html'
         context = {
             'past_one_month_goals': past_one_month_goals,
             'past_three_month_goals': past_three_month_goals,
