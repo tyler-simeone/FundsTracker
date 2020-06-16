@@ -21,3 +21,14 @@ def goal_list(request):
         }
 
         return render(request, template, context)
+    
+    elif request.method == 'POST':
+        form_data = request.POST
+
+        new_goal = FinancialGoal.objects.create(
+            goal = form_data['name'],
+            timeframe = form_data['time_horizon'],
+            user_id = request.user.id
+        )
+
+        return redirect(reverse('fundstrackerapp:goals'))

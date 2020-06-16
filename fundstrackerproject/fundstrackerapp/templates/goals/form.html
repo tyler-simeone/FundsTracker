@@ -1,0 +1,35 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/goalform.css' %}" />
+{% endblock %}
+
+
+{% block content %}
+
+{% comment %} {% if income_source.id is not None %} {% endcomment %}
+    {% comment %} <form action="{% url 'fundstrackerapp:income_source' income_source.id %}" method="post"> {% endcomment %}
+        {% comment %} <input type="hidden" name="actual_method" value="PUT"> {% endcomment %}
+{% comment %} {% else %} {% endcomment %}
+    <form action="{% url 'fundstrackerapp:goals' %}" method="post">
+{% comment %} {% endif %} {% endcomment %}
+      {% csrf_token %}
+      <fieldset>
+          <label for="name">Goal Name:</label>
+          <input id="name" type="text" name="name" value="" />
+      </fieldset>
+      <fieldset>
+          <label for="time_horizon">Time Horizon:</label>
+          <select id="time_horizon" name="time_horizon">
+            <option value="1">1 Month</option>
+            <option value="3">3 Months</option>
+            <option value="6">6 Months</option>
+            <option value="12">1 Year</option>
+          </select>
+      </fieldset>
+
+       <input type="submit" value="Submit" />
+    </form>
+
+{% endblock %}
