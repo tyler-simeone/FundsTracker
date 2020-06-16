@@ -8,16 +8,16 @@
 
 {% block content %}
 
-{% comment %} {% if income_source.id is not None %} {% endcomment %}
-    {% comment %} <form action="{% url 'fundstrackerapp:income_source' income_source.id %}" method="post"> {% endcomment %}
-        {% comment %} <input type="hidden" name="actual_method" value="PUT"> {% endcomment %}
-{% comment %} {% else %} {% endcomment %}
+{% if financial_goal.id is not None %}
+    <form action="{% url 'fundstrackerapp:goal_details' financial_goal.id %}" method="post">
+        <input type="hidden" name="actual_method" value="PUT">
+{% else %}
     <form action="{% url 'fundstrackerapp:goals' %}" method="post">
-{% comment %} {% endif %} {% endcomment %}
+{% endif %}
       {% csrf_token %}
       <fieldset>
           <label for="name">Goal Name:</label>
-          <input id="name" type="text" name="name" value="" />
+          <input id="name" type="text" name="name" value="{{ financial_goal.goal }}" />
       </fieldset>
       <fieldset>
           <label for="time_horizon">Time Horizon:</label>
