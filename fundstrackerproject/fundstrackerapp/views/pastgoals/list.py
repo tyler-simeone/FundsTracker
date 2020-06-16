@@ -29,12 +29,20 @@ def past_goals_list(request):
             if (exp_month > 12):
                 exp_year += 1
                 exp_month -= 12
+            
+            new_date = str(exp_month) + '-' + str(exp_year)
+            print(new_date)
 
             # grabbing current date to check against the goal created
             current_date = str(datetime.datetime.now())
             current_month = int(current_date.split('-')[1])
             current_year = int(current_date.split('-')[0])
+            new_time = str(current_month) + '-' + str(current_year)
+            print(new_time)
 
+            # if ((exp_month < current_month) and (exp_year <= current_year)):
+            #     past_one_month_goals.append(goal)
+            
             if ((exp_month < current_month) and (exp_year <= current_year)):
                 past_one_month_goals.append(goal)
             
