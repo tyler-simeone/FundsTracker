@@ -96,7 +96,7 @@ def past_goals_list(request):
         twelve_month_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=12)
         past_twelve_month_goals = []
     
-        for goal in one_month_goals:
+        for goal in twelve_month_goals:
             # getting date from when goal was created
             goal_date_str = str(goal.created_at)
             goal_created_date = goal_date_str.split('-')
