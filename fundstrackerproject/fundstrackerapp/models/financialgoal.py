@@ -7,6 +7,7 @@ class FinancialGoal (models.Model):
     goal = models.CharField(max_length=250)
     timeframe = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
+    is_completed = models.BooleanField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
