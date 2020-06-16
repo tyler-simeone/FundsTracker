@@ -19,6 +19,9 @@ def past_goals_list(request):
             goal_date_str = str(goal.created_at)
             goal_created_date = goal_date_str.split('-')
             goal_created_month = int(goal_created_date[1])   
+            goal_created_day_list = goal_created_date[2].split()
+            goal_created_day = int(goal_created_day_list[0])
+            print(goal_created_day)
 
             # creating expiration dates for the goal
             exp_month = goal_created_month + goal.timeframe
@@ -29,23 +32,26 @@ def past_goals_list(request):
             if (exp_month > 12):
                 exp_year += 1
                 exp_month -= 12
-            
-            new_date = str(exp_month) + '-' + str(exp_year)
-            print(new_date)
 
             # grabbing current date to check against the goal created
             current_date = str(datetime.datetime.now())
             current_month = int(current_date.split('-')[1])
             current_year = int(current_date.split('-')[0])
-            new_time = str(current_month) + '-' + str(current_year)
-            print(new_time)
+            current_day_list = current_date.split('-')[2]
+            current_day = int(current_day_list.split()[0])
+            print(current_day)
 
             # if ((exp_month < current_month) and (exp_year <= current_year)):
             #     past_one_month_goals.append(goal)
             
-            if ((exp_month < current_month) and (exp_year <= current_year)):
+            if (exp_year < current_year):
+                past_one_month_goals.append(goal)
+
+            elif (exp_year == current_year and exp_month < current_month):
                 past_one_month_goals.append(goal)
             
+            elif (exp_year == current_year and exp_month == current_month and goal_created_day < current_day):
+                past_one_month_goals.append(goal)
         
         three_month_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=3)
         past_three_month_goals = []
