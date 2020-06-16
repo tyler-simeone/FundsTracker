@@ -31,6 +31,14 @@
       </fieldset>
       
        <input type="submit" value="Submit" />
+       
+       {% if financial_goal.id is not None %}
+       <form action="{% url 'fundstrackerapp:goal_details' financial_goal.id %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="actual_method" value="DELETE" />
+            <button onclick="return confirm('Are you sure?');">Delete</button>
+       </form>
+       {% endif %}
     </form>
 
 {% endblock %}

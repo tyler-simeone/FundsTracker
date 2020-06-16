@@ -14,13 +14,13 @@ def goal_details(request, goal_id):
     if request.method == 'POST':
         form_data = request.POST
 
-        # if (
-        #     "actual_method" in form_data
-        #     and form_data["actual_method"] == "DELETE"
-        # ):
-        #     goal.delete()
+        if (
+            "actual_method" in form_data
+            and form_data["actual_method"] == "DELETE"
+        ):
+            goal.delete()
 
-        #     return redirect(reverse('fundstrackerapp:goals'))
+            return redirect(reverse('fundstrackerapp:goals'))
             
         if (
             "actual_method" in form_data
