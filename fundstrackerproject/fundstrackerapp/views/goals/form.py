@@ -14,15 +14,15 @@ def goal_form(request):
 
         return render(request, template, context)
       
-# @login_required
-# def income_edit_form(request, income_id):
+@login_required
+def goal_edit_form(request, goal_id):
 
-#     if request.method == 'GET':
-#         income_source = MonthlyIncome.objects.get(pk=income_id)
+    if request.method == 'GET':
+        financial_goal = FinancialGoal.objects.get(pk=goal_id)
 
-#         template = 'incomesources/form.html'
-#         context = {
-#             'income_source': income_source
-#         }
+        template = 'goals/form.html'
+        context = {
+            'financial_goal': financial_goal
+        }
 
-#         return render(request, template, context)
+        return render(request, template, context)
