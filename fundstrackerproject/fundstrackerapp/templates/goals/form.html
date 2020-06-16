@@ -23,14 +23,22 @@
           <label for="time_horizon">Time Horizon:</label>
           <select id="time_horizon" name="time_horizon" required>
             <option hidden disabled selected value> -- select an option -- </option>
-            <option value="1">1 Month</option>
-            <option value="3">3 Months</option>
-            <option value="6">6 Months</option>
-            <option value="12">1 Year</option>
+            <option {% if financial_goal.timeframe == 1 %}selected="selected"{% endif %} value="1">1 Month</option>
+            <option {% if financial_goal.timeframe == 3 %}selected="selected"{% endif %} value="3">3 Months</option>
+            <option {% if financial_goal.timeframe == 6 %}selected="selected"{% endif %} value="6">6 Months</option>
+            <option {% if financial_goal.timeframe == 12 %}selected="selected"{% endif %} value="12">1 Year</option>
           </select>
       </fieldset>
       
        <input type="submit" value="Submit" />
+
+       {% if financial_goal.id is not None %}
+       <form action="{% url 'fundstrackerapp:goal_details' financial_goal.id %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="actual_method" value="DELETE" />
+            <button onclick="return confirm('Are you sure?');">Delete</button>
+       </form>
+       {% endif %}
     </form>
 
 {% endblock %}
