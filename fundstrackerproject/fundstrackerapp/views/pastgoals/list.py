@@ -14,43 +14,109 @@ def past_goals_list(request):
         
         # Seeing if the goal's expiration date has been reached
         # (making it a past goal)
-        #   getting created_at month, adding the timeframe int,
-        #   now try to rejoin and parse date it to hopefully
-        #   convert the > 12 nums to new year nums
         for goal in one_month_goals:
+            # getting date from when goal was created
             goal_date_str = str(goal.created_at)
             goal_created_date = goal_date_str.split('-')
-            goal_date_sliced = goal_created_date[0:3:2]
-            
-            exp_month = int(goal_created_date[1]) + goal.timeframe
+            goal_created_month = int(goal_created_date[1])   
 
-            goal_date_sliced.insert(1, str(exp_month))
-            goal_date = '-'.join(goal_date_sliced)
-            
+            # creating expiration dates for the goal
+            exp_month = goal_created_month + goal.timeframe
+            exp_year = int(goal_created_date[0])
 
-            # so I need to come up with a way to convert any exp month
-            # that is > 12 into the correct next year's month
+            # updating the year if the expiration month is past Dec.
             if (exp_month > 12):
-                # will add one year to the goal
-                goal_year = str(int(goal_created_date[0]) + 1)
+                exp_year += 1
+                exp_month -= 12
 
-                # ie. 12 + 3 = 15 exp month, 10 + 6 = 16 exp month
-                new_year_months = exp_month - goal.timeframe
-
-
+            # grabbing current date to check against the goal created
             current_date = str(datetime.datetime.now())
             current_month = int(current_date.split('-')[1])
-            print(goal_created_date, goal_date)
+            current_year = int(current_date.split('-')[0])
 
-            # if (exp_month < current_month):
-            #     past_one_month_goals.append(goal)
+            if ((exp_month < current_month) and (exp_year <= current_year)):
+                past_one_month_goals.append(goal)
+            
         
-        print(past_one_month_goals)
+        three_month_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=3)
+        past_three_month_goals = []
+        
+        for goal in three_month_goals:
+            # getting date from when goal was created
+            goal_date_str = str(goal.created_at)
+            goal_created_date = goal_date_str.split('-')
+            goal_created_month = int(goal_created_date[1])   
 
-        past_one_month_goals = 0
-        past_three_month_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=3)
-        past_six_month_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=6)
-        past_twelve_month_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=12)
+            # creating expiration dates for the goal
+            exp_month = goal_created_month + goal.timeframe
+            exp_year = int(goal_created_date[0])
+
+            # updating the year if the expiration month is past Dec.
+            if (exp_month > 12):
+                exp_year += 1
+                exp_month -= 12
+
+            # grabbing current date to check against the goal created
+            current_date = str(datetime.datetime.now())
+            current_month = int(current_date.split('-')[1])
+            current_year = int(current_date.split('-')[0])
+
+            if ((exp_month < current_month) and (exp_year <= current_year)):
+                past_three_month_goals.append(goal)
+
+        
+        six_month_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=6)
+        past_six_month_goals = []
+    
+        for goal in six_month_goals:
+            # getting date from when goal was created
+            goal_date_str = str(goal.created_at)
+            goal_created_date = goal_date_str.split('-')
+            goal_created_month = int(goal_created_date[1])   
+
+            # creating expiration dates for the goal
+            exp_month = goal_created_month + goal.timeframe
+            exp_year = int(goal_created_date[0])
+
+            # updating the year if the expiration month is past Dec.
+            if (exp_month > 12):
+                exp_year += 1
+                exp_month -= 12
+
+            # grabbing current date to check against the goal created
+            current_date = str(datetime.datetime.now())
+            current_month = int(current_date.split('-')[1])
+            current_year = int(current_date.split('-')[0])
+
+            if ((exp_month < current_month) and (exp_year <= current_year)):
+                past_six_month_goals.append(goal)
+
+        
+        twelve_month_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=12)
+        past_twelve_month_goals = []
+    
+        for goal in one_month_goals:
+            # getting date from when goal was created
+            goal_date_str = str(goal.created_at)
+            goal_created_date = goal_date_str.split('-')
+            goal_created_month = int(goal_created_date[1])   
+
+            # creating expiration dates for the goal
+            exp_month = goal_created_month + goal.timeframe
+            exp_year = int(goal_created_date[0])
+
+            # updating the year if the expiration month is past Dec.
+            if (exp_month > 12):
+                exp_year += 1
+                exp_month -= 12
+
+            # grabbing current date to check against the goal created
+            current_date = str(datetime.datetime.now())
+            current_month = int(current_date.split('-')[1])
+            current_year = int(current_date.split('-')[0])
+
+            if ((exp_month < current_month) and (exp_year <= current_year)):
+                past_twelve_month_goals.append(goal)
 
         template = 'goals/list.html'
         context = {
