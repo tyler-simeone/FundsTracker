@@ -13,7 +13,7 @@
             <h1>One Month Goals:</h1>
             <ul>
                 {% for goal in past_one_month_goals %}
-                <li>{{ goal.goal }}</li>
+                <li>{{ goal.goal }} {% if goal.is_completed %}<span>Completed</span>{% endif %} </li>
                 {% endfor %}
             </ul>
             {% comment %} <a href="{% url 'fundstrackerapp:netincome_details' %}"><button>Details</button></a> {% endcomment %}
@@ -23,7 +23,7 @@
             <h1>Three Month Goals:</h1>
             <ul>
                 {% for goal in past_three_month_goals %}
-                <li>{{ goal.goal }}</li>
+                <li>{{ goal.goal }} {% if goal.is_completed %}<span>Completed</span>{% endif %} </li>
                 {% endfor %}
             </ul>
             {% comment %} <a href="{% url 'fundstrackerapp:netincome_details' %}"><button>Details</button></a> {% endcomment %}
@@ -33,7 +33,7 @@
             <h1>Six Month Goals:</h1>
             <ul>
                 {% for goal in past_six_month_goals %}
-                <li>{{ goal.goal }}</li>
+                <li>{{ goal.goal }} {% if goal.is_completed %}<span>Completed</span>{% endif %} </li>
                 {% endfor %}
             </ul>
             {% comment %} <a href="{% url 'fundstrackerapp:netincome_details' %}"><button>Details</button></a> {% endcomment %}
@@ -43,7 +43,7 @@
             <h1>Twelve Month Goals:</h1>
             <ul>
                 {% for goal in past_twelve_month_goals %}
-                <li>{{ goal.goal }}</li>
+                <li>{{ goal.goal }} {% if goal.is_completed %}<span>Completed</span>{% endif %} </li>
                 {% endfor %}
             </ul>
             {% comment %} <a href="{% url 'fundstrackerapp:netincome_details' %}"><button>Details</button></a> {% endcomment %}
