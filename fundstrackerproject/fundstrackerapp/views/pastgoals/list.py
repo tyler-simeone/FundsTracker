@@ -10,13 +10,13 @@ def past_goals_list(request):
     if request.method == 'GET':
 
         one_month_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=1)
-        past_goals = []
+        past_one_month_goals = []
         
         # Seeing if the goal's expiration date has been reached
         # (making it a past goal)
         for goal in one_month_goals:
-            goal_month_str = str(goal.created_at)
-            goal_month = goal_month_str.split('-')[1]
+            goal_date_str = str(goal.created_at)
+            goal_month = goal_date_str.split('-')[1]
 
             exp_month = int(goal_month) + goal.timeframe
 
@@ -25,7 +25,9 @@ def past_goals_list(request):
             print(exp_month, current_month)
 
             if (exp_month < current_month):
-                past_goals.append(goal)
+                past_one_month_goals.append(goal)
+        
+        print(past_one_month_goals)
 
         past_one_month_goals = 0
         past_three_month_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=3)
