@@ -16,9 +16,14 @@ def past_goals_list(request):
         # (making it a past goal)
         for goal in one_month_goals:
             goal_date_str = str(goal.created_at)
-            goal_month = goal_date_str.split('-')[1]
+            goal_month = int(goal_date_str.split('-')[1])
+            
+            exp_month = goal_month + goal.timeframe
 
-            exp_month = int(goal_month) + goal.timeframe
+            # so I need to come up with a way to convert any exp month
+            # that is > 12 into the correct next year's month
+            if (exp_month > 12):
+                new_year_months = exp_month - goal.timeframe
 
             current_date = str(datetime.datetime.now())
             current_month = int(current_date.split('-')[1])
