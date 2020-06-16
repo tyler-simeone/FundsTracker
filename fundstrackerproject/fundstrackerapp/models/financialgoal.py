@@ -14,7 +14,7 @@ class FinancialGoal (models.Model):
         verbose_name_plural = ("financial goals")
 
     def __str__(self):
-        return self.name
+        return f'{self.goal}'
 
     def get_absolute_url(self):
         return reverse("financialgoal_detail", kwargs={"pk": self.pk})
