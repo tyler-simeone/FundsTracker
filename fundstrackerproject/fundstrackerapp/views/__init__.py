@@ -11,4 +11,5 @@ from .monthlyexpense.details import expense_details
 from .goals.list import goal_list
 from .goals.form import goal_form, goal_edit_form
 from .goals.details import goal_details
+from .goals.completed import goal_completed
 from .pastgoals.list import past_goals_list

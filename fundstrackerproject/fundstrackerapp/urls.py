@@ -21,6 +21,7 @@ urlpatterns = [
     path('goals/addgoal', goal_form, name='goal_form'),
     path('goals/<int:goal_id>/editgoal', goal_edit_form, name='goal_edit_form'),
     path('goals/<int:goal_id>', goal_details, name='goal_details'),
+    path('goals/<int:goal_id>/complete', goal_completed, name='goal_completed'),
     path('pastgoals/', past_goals_list, name='past_goals_list'),
 
 ]

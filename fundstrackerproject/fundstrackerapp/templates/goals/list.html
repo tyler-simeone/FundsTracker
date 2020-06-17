@@ -11,14 +11,19 @@
         <a href="{% url 'fundstrackerapp:goal_form' %}"><button>Create a New Goal</button></a>
         <a href="{% url 'fundstrackerapp:past_goals_list' %}"><button>View Past Goals</button></a>
 
-        <div class="goals__container">
+        <div class="goal_list__container">
             <section class="one_month_goals">
                 <h1>1 Month</h1>
                 <ul>
                     {% for goal in one_month_current_goals %}
-                        <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
-                            <li>{{ goal.goal }}</li>
-                        </a>
+                        <div class="goal__container">
+                            <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
+                                <li>{{ goal.goal }}</li>
+                            </a>
+                            <a href="{% url 'fundstrackerapp:goal_completed' goal.id %}">
+                                <button type="submit">Completed</button>
+                            </a>
+                        </div>
                     {% endfor %}
                 </ul>
             </section>
@@ -27,9 +32,14 @@
                 <h1>3 Month</h1>
                 <ul>
                     {% for goal in three_month_current_goals %}
-                    <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
-                        <li>{{ goal.goal }}</li>
-                    </a>
+                    <div class="goal__container">
+                        <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
+                            <li>{{ goal.goal }}</li>
+                        </a>
+                        <a href="{% url 'fundstrackerapp:goal_completed' goal.id %}">
+                            <button type="submit">Completed</button>
+                        </a>
+                    </div>
                     {% endfor %}
                 </ul>
             </section>
@@ -38,9 +48,14 @@
                 <h1>6 Month</h1>
                 <ul>
                     {% for goal in six_month_current_goals %}
-                    <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
-                        <li>{{ goal.goal }}</li>
-                    </a>
+                    <div class="goal__container">
+                        <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
+                            <li>{{ goal.goal }}</li>
+                        </a>
+                        <a href="{% url 'fundstrackerapp:goal_completed' goal.id %}">
+                            <button type="submit">Completed</button>
+                        </a>
+                    </div>
                     {% endfor %}
                 </ul>
             </section>
@@ -49,9 +64,14 @@
                 <h1>12 Month</h1>
                 <ul>
                     {% for goal in twelve_month_current_goals %}
-                    <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
-                        <li>{{ goal.goal }}</li>
-                    </a>
+                    <div class="goal__container">
+                        <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
+                            <li>{{ goal.goal }}</li>
+                        </a>
+                        <a href="{% url 'fundstrackerapp:goal_completed' goal.id %}">
+                            <button type="submit">Completed</button>
+                        </a>
+                    </div>
                     {% endfor %}
                 </ul>
             </section>

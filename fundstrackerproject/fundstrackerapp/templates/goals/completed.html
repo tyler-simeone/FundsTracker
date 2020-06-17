@@ -1,0 +1,17 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/goals.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="completed_goals__container">
+    <h1>Completed Goals:</h1>
+    <ul>
+    {% for goal in completed_goals %}
+        <li>{{ goal.goal }}</li>
+    {% endfor %}
+    </ul>
+<div>
+{% endblock %}

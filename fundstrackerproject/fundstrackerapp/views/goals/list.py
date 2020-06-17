@@ -8,6 +8,7 @@ import datetime
 def goal_list(request):
 
     if request.method == 'GET':
+
         one_month_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=1)
         past_one_month_goals = []
         
@@ -200,12 +201,16 @@ def goal_list(request):
             if goal not in past_twelve_month_goals:
                 twelve_month_current_goals.append(goal)
 
+        def complete_goal(goal):
+            goal.is_completed = True
+
         template = 'goals/list.html'
         context = {
             'one_month_current_goals': one_month_current_goals,
             'three_month_current_goals': three_month_current_goals,
             'six_month_current_goals': six_month_current_goals,
-            'twelve_month_current_goals': twelve_month_current_goals
+            'twelve_month_current_goals': twelve_month_current_goals,
+            'complete_goal': complete_goal
         }
 
         return render(request, template, context)
