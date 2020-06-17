@@ -15,10 +15,10 @@
             <section class="one_month_goals">
                 <h1>1 Month</h1>
                 <ul>
-                    {% for goal in one_month_goals %}
-                    <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
-                        <li>{{ goal.goal }}</li>
-                    </a>
+                    {% for goal in one_month_current_goals %}
+                        <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
+                            <li>{{ goal.goal }}</li>
+                        </a>
                     {% endfor %}
                 </ul>
             </section>
@@ -26,7 +26,7 @@
             <section class="three_month_goals">
                 <h1>3 Month</h1>
                 <ul>
-                    {% for goal in three_month_goals %}
+                    {% for goal in three_month_current_goals %}
                     <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
                         <li>{{ goal.goal }}</li>
                     </a>
@@ -37,7 +37,7 @@
             <section class="six_month_goals">
                 <h1>6 Month</h1>
                 <ul>
-                    {% for goal in six_month_goals %}
+                    {% for goal in six_month_current_goals %}
                     <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
                         <li>{{ goal.goal }}</li>
                     </a>
@@ -48,7 +48,7 @@
             <section class="twelve_month_goals">
                 <h1>12 Month</h1>
                 <ul>
-                    {% for goal in twelve_month_goals %}
+                    {% for goal in twelve_month_current_goals %}
                     <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
                         <li>{{ goal.goal }}</li>
                     </a>
