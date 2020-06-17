@@ -9,13 +9,7 @@ def goal_completed(request, goal_id):
 
     if request.method == 'GET':
 
-        # goal = FinancialGoal.objects.get(pk=goal_id)
-        # goal.is_completed = 1
-        # goal.save()
-
         completed_goals = FinancialGoal.objects.filter(user=request.user.id, is_completed=1)
-
-
 
         template = 'goals/completed.html'
         context = {

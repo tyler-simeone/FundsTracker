@@ -13,5 +13,8 @@
         <li>{{ goal.goal }}</li>
     {% endfor %}
     </ul>
+    <a href="{% url 'fundstrackerapp:goals' %}">
+        <button>Back to Goals</button>
+    </a>
 <div>
 {% endblock %}
