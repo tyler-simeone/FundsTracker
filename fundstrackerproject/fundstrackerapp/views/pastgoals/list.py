@@ -21,7 +21,6 @@ def past_goals_list(request):
             goal_created_month = int(goal_created_date[1])   
             goal_created_day_list = goal_created_date[2].split()
             goal_created_day = int(goal_created_day_list[0])
-            print(goal_created_day)
 
             # creating expiration dates for the goal
             exp_month = goal_created_month + goal.timeframe
@@ -39,7 +38,6 @@ def past_goals_list(request):
             current_year = int(current_date.split('-')[0])
             current_day_list = current_date.split('-')[2]
             current_day = int(current_day_list.split()[0])
-            print(current_day)
 
             if (exp_year < current_year):
                 past_one_month_goals.append(goal)
@@ -63,7 +61,6 @@ def past_goals_list(request):
             goal_created_month = int(goal_created_date[1])   
             goal_created_day_list = goal_created_date[2].split()
             goal_created_day = int(goal_created_day_list[0])
-            print(goal_created_day)
 
             # creating expiration dates for the goal
             exp_month = goal_created_month + goal.timeframe
@@ -81,7 +78,6 @@ def past_goals_list(request):
             current_year = int(current_date.split('-')[0])
             current_day_list = current_date.split('-')[2]
             current_day = int(current_day_list.split()[0])
-            print(current_day)
 
             if (exp_year < current_year):
                 past_three_month_goals.append(goal)
@@ -105,7 +101,6 @@ def past_goals_list(request):
             goal_created_month = int(goal_created_date[1])   
             goal_created_day_list = goal_created_date[2].split()
             goal_created_day = int(goal_created_day_list[0])
-            print(goal_created_day)
 
             # creating expiration dates for the goal
             exp_month = goal_created_month + goal.timeframe
@@ -123,7 +118,6 @@ def past_goals_list(request):
             current_year = int(current_date.split('-')[0])
             current_day_list = current_date.split('-')[2]
             current_day = int(current_day_list.split()[0])
-            print(current_day)
 
             if (exp_year < current_year):
                 past_six_month_goals.append(goal)
@@ -147,7 +141,6 @@ def past_goals_list(request):
             goal_created_month = int(goal_created_date[1])   
             goal_created_day_list = goal_created_date[2].split()
             goal_created_day = int(goal_created_day_list[0])
-            print(goal_created_day)
 
             # creating expiration dates for the goal
             exp_month = goal_created_month + goal.timeframe
@@ -165,7 +158,6 @@ def past_goals_list(request):
             current_year = int(current_date.split('-')[0])
             current_day_list = current_date.split('-')[2]
             current_day = int(current_day_list.split()[0])
-            print(current_day)
 
             if (exp_year < current_year):
                 past_twelve_month_goals.append(goal)
@@ -185,14 +177,3 @@ def past_goals_list(request):
         }
 
         return render(request, template, context)
-    
-    # elif request.method == 'POST':
-    #     form_data = request.POST
-
-    #     new_goal = FinancialGoal.objects.create(
-    #         goal = form_data['name'],
-    #         timeframe = form_data['time_horizon'],
-    #         user_id = request.user.id
-    #     )
-
-    #     return redirect(reverse('fundstrackerapp:goals'))
