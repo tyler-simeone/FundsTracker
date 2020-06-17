@@ -9,17 +9,32 @@ def goal_completed(request, goal_id):
 
     if request.method == 'GET':
 
-        goal = FinancialGoal.objects.get(pk=goal_id)
-        goal.is_completed = 1
-        goal.save()
-        
+        # goal = FinancialGoal.objects.get(pk=goal_id)
+        # goal.is_completed = 1
+        # goal.save()
+
         completed_goals = FinancialGoal.objects.filter(user=request.user.id, is_completed=1)
 
 
 
-    template = 'goals/completed.html'
-    context = {
-        'completed_goals': completed_goals
-    }
+        template = 'goals/completed.html'
+        context = {
+            'completed_goals': completed_goals
+        }
 
-    return render(request, template, context)
+        return render(request, template, context)
+
+    if request.method == 'POST':
+        form_data = request.POST
+            
+        if (
+            "actual_method" in form_data
+            and form_data["actual_method"] == "PUT"
+        ):
+            goal = FinancialGoal.objects.get(pk=goal_id)
+            goal.is_completed = 1
+            goal.save()
+
+            return redirect(reverse('fundstrackerapp:goals'))
+
+            

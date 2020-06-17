@@ -20,9 +20,11 @@
                             <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
                                 <li>{{ goal.goal }}</li>
                             </a>
-                            <a href="{% url 'fundstrackerapp:goal_completed' goal.id %}">
+                            <form action="{% url 'fundstrackerapp:goal_completed' goal.id %}" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="actual_method" value="PUT" />
                                 <button type="submit">Completed</button>
-                            </a>
+                            </form>
                         </div>
                     {% endfor %}
                 </ul>
@@ -36,9 +38,11 @@
                         <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
                             <li>{{ goal.goal }}</li>
                         </a>
-                        <a href="{% url 'fundstrackerapp:goal_completed' goal.id %}">
+                        <form action="{% url 'fundstrackerapp:goal_completed' goal.id %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="actual_method" value="PUT" />
                             <button type="submit">Completed</button>
-                        </a>
+                        </form>
                     </div>
                     {% endfor %}
                 </ul>
@@ -52,9 +56,11 @@
                         <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
                             <li>{{ goal.goal }}</li>
                         </a>
-                        <a href="{% url 'fundstrackerapp:goal_completed' goal.id %}">
+                        <form action="{% url 'fundstrackerapp:goal_completed' goal.id %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="actual_method" value="PUT" />
                             <button type="submit">Completed</button>
-                        </a>
+                        </form>
                     </div>
                     {% endfor %}
                 </ul>
@@ -68,9 +74,11 @@
                         <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
                             <li>{{ goal.goal }}</li>
                         </a>
-                        <a href="{% url 'fundstrackerapp:goal_completed' goal.id %}">
+                        <form action="{% url 'fundstrackerapp:goal_completed' goal.id %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="actual_method" value="PUT" />
                             <button type="submit">Completed</button>
-                        </a>
+                        </form>
                     </div>
                     {% endfor %}
                 </ul>
