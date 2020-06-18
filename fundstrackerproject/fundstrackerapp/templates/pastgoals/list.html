@@ -16,6 +16,11 @@
                 <li>{{ goal.goal }} {% if goal.is_completed %}<span>Completed</span>{% endif %} </li>
                 <span>Created: {{ goal.created_at }}</span>
                 {% if goal.is_completed != 1%}<a href="{% url 'fundstrackerapp:past_goal_edit_form' goal.id %}"><button>Re-open Goal</button></a>{% endif %}
+                <form action="{% url 'fundstrackerapp:past_goal_details' goal.id %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="actual_method" value="DELETE" />
+                    <button onclick="return confirm('Are you sure?');">Delete</button>
+                </form>
                 {% endfor %}
             </ul>
         </section>
@@ -27,6 +32,11 @@
                 <li>{{ goal.goal }} {% if goal.is_completed %}<span>Completed</span>{% endif %} </li>
                 <span>Created: {{ goal.created_at }}</span>
                 {% if goal.is_completed != 1%}<a href="{% url 'fundstrackerapp:past_goal_edit_form' goal.id %}"><button>Re-open Goal</button></a>{% endif %}
+                <form action="{% url 'fundstrackerapp:past_goal_details' goal.id %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="actual_method" value="DELETE" />
+                    <button onclick="return confirm('Are you sure?');">Delete</button>
+                </form>
                 {% endfor %}
             </ul>
         </section>
@@ -38,6 +48,11 @@
                 <li>{{ goal.goal }} {% if goal.is_completed %}<span>Completed</span>{% endif %} </li>
                 <span>Created: {{ goal.created_at }}</span>
                 {% if goal.is_completed != 1%}<a href="{% url 'fundstrackerapp:past_goal_edit_form' goal.id %}"><button>Re-open Goal</button></a>{% endif %}
+                <form action="{% url 'fundstrackerapp:past_goal_details' goal.id %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="actual_method" value="DELETE" />
+                    <button onclick="return confirm('Are you sure?');">Delete</button>
+                </form>
                 {% endfor %}
             </ul>
         </section>
@@ -49,6 +64,11 @@
                 <li>{{ goal.goal }} {% if goal.is_completed %}<span>Completed</span>{% endif %} </li>
                 <span>Created: {{ goal.created_at }}</span>
                 {% if goal.is_completed != 1%}<a href="{% url 'fundstrackerapp:past_goal_edit_form' goal.id %}"><button>Re-open Goal</button></a>{% endif %}
+                <form action="{% url 'fundstrackerapp:past_goal_details' goal.id %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="actual_method" value="DELETE" />
+                    <button onclick="return confirm('Are you sure?');">Delete</button>
+                </form>
                 {% endfor %}
             </ul>
         </section>
