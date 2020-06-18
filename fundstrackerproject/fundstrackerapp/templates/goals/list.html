@@ -21,7 +21,7 @@
                             <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
                                 <li>{{ goal.goal }}</li>
                             </a>
-                            <span>Created: {{ goal.created_at }}</span
+                            <span>Created: {{ goal.created_at }}</span>
                             <form action="{% url 'fundstrackerapp:goal_completed' goal.id %}" method="post">
                                 {% csrf_token %}
                                 <input type="hidden" name="actual_method" value="PUT" />
@@ -40,7 +40,7 @@
                         <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
                             <li>{{ goal.goal }}</li>
                         </a>
-                        <span>Created: {{ goal.created_at }}</span
+                        <span>Created: {{ goal.created_at }}</span>
                         <form action="{% url 'fundstrackerapp:goal_completed' goal.id %}" method="post">
                             {% csrf_token %}
                             <input type="hidden" name="actual_method" value="PUT" />
@@ -59,7 +59,7 @@
                         <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
                             <li>{{ goal.goal }}</li>
                         </a>
-                        <span>Created: {{ goal.created_at }}</span
+                        <span>Created: {{ goal.created_at }}</span>
                         <form action="{% url 'fundstrackerapp:goal_completed' goal.id %}" method="post">
                             {% csrf_token %}
                             <input type="hidden" name="actual_method" value="PUT" />
@@ -78,7 +78,7 @@
                         <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
                             <li>{{ goal.goal }}</li>
                         </a>
-                        <span>Created: {{ goal.created_at }}</span
+                        <span>Created: {{ goal.created_at }}</span>
                         <form action="{% url 'fundstrackerapp:goal_completed' goal.id %}" method="post">
                             {% csrf_token %}
                             <input type="hidden" name="actual_method" value="PUT" />
