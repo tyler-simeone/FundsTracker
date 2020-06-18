@@ -11,6 +11,8 @@
     <ul>
     {% for goal in completed_goals %}
         <li>{{ goal.goal }}</li>
+        <span>Timeframe: {{ goal.timeframe }} Month</span>
+        <br />
         <span>Created: {{ goal.created_at }}</span>
     {% endfor %}
     </ul>

@@ -14,9 +14,9 @@
             <ul>
                 {% for goal in past_one_month_goals %}
                 <li>{{ goal.goal }} {% if goal.is_completed %}<span>Completed</span>{% endif %} </li>
+                <span>Created: {{ goal.created_at }}</span>
                 {% endfor %}
             </ul>
-            {% comment %} <a href="{% url 'fundstrackerapp:netincome_details' %}"><button>Details</button></a> {% endcomment %}
         </section>
         
         <section class="three_month_goals">
@@ -24,9 +24,9 @@
             <ul>
                 {% for goal in past_three_month_goals %}
                 <li>{{ goal.goal }} {% if goal.is_completed %}<span>Completed</span>{% endif %} </li>
+                <span>Created: {{ goal.created_at }}</span>
                 {% endfor %}
             </ul>
-            {% comment %} <a href="{% url 'fundstrackerapp:netincome_details' %}"><button>Details</button></a> {% endcomment %}
         </section>
         
         <section class="six_month_goals">
@@ -34,9 +34,9 @@
             <ul>
                 {% for goal in past_six_month_goals %}
                 <li>{{ goal.goal }} {% if goal.is_completed %}<span>Completed</span>{% endif %} </li>
+                <span>Created: {{ goal.created_at }}</span>
                 {% endfor %}
             </ul>
-            {% comment %} <a href="{% url 'fundstrackerapp:netincome_details' %}"><button>Details</button></a> {% endcomment %}
         </section>
         
         <section class="twelve_month_goals">
@@ -44,9 +44,12 @@
             <ul>
                 {% for goal in past_twelve_month_goals %}
                 <li>{{ goal.goal }} {% if goal.is_completed %}<span>Completed</span>{% endif %} </li>
+                <span>Created: {{ goal.created_at }}</span>
                 {% endfor %}
             </ul>
-            {% comment %} <a href="{% url 'fundstrackerapp:netincome_details' %}"><button>Details</button></a> {% endcomment %}
         </section>
+        <a href="{% url 'fundstrackerapp:goals' %}">
+            <button>Back to Goals</button>
+        </a>
     <div>
 {% endblock %}
