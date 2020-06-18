@@ -28,6 +28,7 @@ def goal_details(request, goal_id):
         ):
             goal.goal = form_data['name']
             goal.timeframe = form_data['time_horizon']
+            goal.is_completed = 0
             goal.save()
 
             return redirect(reverse('fundstrackerapp:goals'))
