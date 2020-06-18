@@ -11,6 +11,7 @@
     <ul>
     {% for goal in completed_goals %}
         <li>{{ goal.goal }}</li>
+        <span>Created: {{ goal.created_at }}</span>
     {% endfor %}
     </ul>
     <a href="{% url 'fundstrackerapp:goals' %}">
