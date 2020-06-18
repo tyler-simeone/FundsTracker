@@ -1,0 +1,47 @@
+[
+    {
+        "pk": 1,
+        "model": "fundstrackerapp.journalentry",
+        "fields": {
+            "entry": "First journal entry",
+            "created_at": "2020-06-15 00:00:00",
+            "user_id": 1
+        }
+    },
+    {
+        "pk": 2,
+        "model": "fundstrackerapp.journalentry",
+        "fields": {
+            "entry": "Second journal entry",
+            "created_at": "2020-06-15 00:00:00",
+            "user_id": 1
+        }
+    },
+    {
+        "pk": 3,
+        "model": "fundstrackerapp.journalentry",
+        "fields": {
+            "entry": "Third journal entry",
+            "created_at": "2020-06-15 00:00:00",
+            "user_id": 1
+        }
+    },
+    {
+        "pk": 4,
+        "model": "fundstrackerapp.journalentry",
+        "fields": {
+            "entry": "Fourth journal entry",
+            "created_at": "2020-06-15 00:00:00",
+            "user_id": 1
+        }
+    },
+    {
+        "pk": 5,
+        "model": "fundstrackerapp.journalentry",
+        "fields": {
+            "entry": "Fifth journal entry",
+            "created_at": "2020-06-15 00:00:00",
+            "user_id": 1
+        }
+    }
+]
