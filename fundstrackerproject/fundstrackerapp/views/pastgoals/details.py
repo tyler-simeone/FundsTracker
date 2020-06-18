@@ -20,8 +20,8 @@ def past_goal_details(request, goal_id):
             and form_data["actual_method"] == "DELETE"
         ):
             goal.delete()
-
-            return redirect(reverse('fundstrackerapp:goals'))
+            
+            return redirect(reverse('fundstrackerapp:past_goals_list'))
             
         if (
             "actual_method" in form_data
