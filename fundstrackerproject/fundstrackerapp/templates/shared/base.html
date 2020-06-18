@@ -30,6 +30,10 @@
         {% endblock %}
     </main>
 
+    {% comment %} 
+        Including the new template with script tags for the CDNs 
+        for jQuery and Chart.js (both necessary for the chart) 
+    {% endcomment %}
     {% include 'shared/js.html' %}
     {% block scripts %}
     <script>
