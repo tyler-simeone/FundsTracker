@@ -30,7 +30,13 @@
         {% endblock %}
     </main>
 
+    {% include 'shared/js.html' %}
     {% block scripts %}
+    <script>
+    $(document).ready(function() {
+        {% block jquery %}{% endblock %}
+    })
+    </script>
     {% endblock scripts %}
 
 </body>
