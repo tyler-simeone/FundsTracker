@@ -9,10 +9,6 @@ def goal_list(request):
 
     if request.method == 'GET':
 
-        # Only getting this goal so I can render completed goals view,
-        # which requires an id in the route
-        goal_for_completed_button = FinancialGoal.objects.get(pk=2)
-
         one_month_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=1)
         past_one_month_goals = []
         
@@ -210,8 +206,7 @@ def goal_list(request):
             'one_month_current_goals': one_month_current_goals,
             'three_month_current_goals': three_month_current_goals,
             'six_month_current_goals': six_month_current_goals,
-            'twelve_month_current_goals': twelve_month_current_goals,
-            'goal': goal_for_completed_button
+            'twelve_month_current_goals': twelve_month_current_goals
         }
 
         return render(request, template, context)
