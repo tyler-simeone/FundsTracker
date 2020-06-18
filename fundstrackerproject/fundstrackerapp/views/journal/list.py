@@ -19,21 +19,12 @@ def journal_list(request):
 
         return render(request, template, context)
       
-    # elif request.method == 'POST':
-    #     form_data = request.POST
-
-    #     if ("expense" in form_data):
-    #         new_expense = MonthlyExpense.objects.create(
-    #             name = form_data['name'],
-    #             total = form_data['total'],
-    #             user_id = request.user.id
-    #         )
+    elif request.method == 'POST':
+        form_data = request.POST
         
-    #     else:
-    #         new_income = MonthlyIncome.objects.create(
-    #             name = form_data['name'],
-    #             total = form_data['total'],
-    #             user_id = request.user.id
-    #         )        
+        new_entry = JournalEntry.objects.create(
+            entry = form_data['entry'],
+            user_id = request.user.id
+        )        
 
-    #     return redirect(reverse('fundstrackerapp:account'))
+        return redirect(reverse('fundstrackerapp:journal_list'))
