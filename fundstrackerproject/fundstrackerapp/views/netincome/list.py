@@ -21,6 +21,8 @@ def net_income_list(request):
 
         net_income = total_income - total_expense
 
+        # Now need to get completed vs current goals for the user
+
         template = 'netincome/list.html'
         
         context = {
