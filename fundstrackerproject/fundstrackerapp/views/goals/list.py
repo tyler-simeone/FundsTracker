@@ -9,7 +9,7 @@ def goal_list(request):
 
     if request.method == 'GET':
 
-        one_month_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=1)
+        one_month_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=1, is_completed=0)
         past_one_month_goals = []
         
         # Seeing if the goal's expiration date has been reached
@@ -58,7 +58,7 @@ def goal_list(request):
 
 
 
-        three_month_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=3)
+        three_month_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=3, is_completed=0)
         past_three_month_goals = []
         
         # Seeing if the goal's expiration date has been reached
@@ -106,7 +106,7 @@ def goal_list(request):
                 three_month_current_goals.append(goal)
 
         
-        six_month_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=6)
+        six_month_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=6, is_completed=0)
         past_six_month_goals = []
         
         # Seeing if the goal's expiration date has been reached
@@ -154,7 +154,7 @@ def goal_list(request):
                 six_month_current_goals.append(goal)
         
         
-        twelve_month_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=12)
+        twelve_month_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=12, is_completed=0)
         past_twelve_month_goals = []
         
         # Seeing if the goal's expiration date has been reached
@@ -217,7 +217,8 @@ def goal_list(request):
         new_goal = FinancialGoal.objects.create(
             goal = form_data['name'],
             timeframe = form_data['time_horizon'],
-            user_id = request.user.id
+            user_id = request.user.id,
+            is_completed = 0
         )
 
         return redirect(reverse('fundstrackerapp:goals'))
