@@ -30,7 +30,24 @@
         {% endblock %}
     </main>
 
+    {% comment %} 
+        Including the new template with script tags for the CDNs 
+        for jQuery and Chart.js (both necessary for the chart) 
+    {% endcomment %}
+    {% include 'shared/js.html' %}
+    
     {% block scripts %}
+    <script>
+
+    {% comment %} 
+        When the document loads we're loading the jquery blocks 
+        from our homepage template
+     {% endcomment %}
+    $(document).ready(function() {
+        {% block jquery %}{% endblock %}
+    })
+
+    </script>
     {% endblock scripts %}
 
 </body>

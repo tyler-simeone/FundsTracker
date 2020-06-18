@@ -5,12 +5,68 @@
     <link rel="stylesheet" href="{% static 'styles/netincome.css' %}" />
 {% endblock %}
 
+<script>
+{% block jquery %}
+var one_month_progress_percentage = "{{ one_month_progress_percentage }}"
+var three_month_progress_percentage = "{{ three_month_progress_percentage }}"
+var six_month_progress_percentage = "{{ six_month_progress_percentage }}"
+var twelve_month_progress_percentage = "{{ twelve_month_progress_percentage }}"
+
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['One Month', 'Three Month', 'Six Month', 'One Year'],
+        datasets: [{
+            label: 'Completed Financial Goals',
+            data: [one_month_progress_percentage, three_month_progress_percentage,
+                six_month_progress_percentage, twelve_month_progress_percentage],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.6)',
+                'rgba(54, 162, 235, 0.6)',
+                'rgba(255, 206, 86, 0.6)',
+                'rgba(75, 192, 192, 0.6)',
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                     // Include a % sign in the ticks
+                    callback: function(value, index, values) {
+                        return value + '%';
+                    },
+                    max: 100
+                }
+            }]
+        }
+    }
+});
+
+{% endblock %}
+</script>
+
 {% block content %}
-    <div>
-        <section>
+    <div class="homepage__container">
+        <section class="expected_net_income">
             <h1>Expected Net Income:</h1>
             <div class="net_income__total">{{ net_income }}</div>
             <a href="{% url 'fundstrackerapp:netincome_details' %}"><button>Details</button></a>
+        </section>
+        
+        <section class="plotly_graph__container">
+            <h1>Your Progress:</h1>
+            <br />
+            <canvas id="myChart"></canvas>
         </section>
     <div>
 {% endblock %}
