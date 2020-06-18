@@ -12,5 +12,11 @@
             <div class="net_income__total">{{ net_income }}</div>
             <a href="{% url 'fundstrackerapp:netincome_details' %}"><button>Details</button></a>
         </section>
+        
+        <section class="plotly_graph__container">
+            <h1>Your Progress:</h1>
+            <br />
+            {% comment %} {{ plot | safe }} {% endcomment %}
+        </section>
     <div>
 {% endblock %}

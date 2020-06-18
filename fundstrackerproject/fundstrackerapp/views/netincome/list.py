@@ -22,6 +22,7 @@ def net_income_list(request):
         net_income = total_income - total_expense
 
         template = 'netincome/list.html'
+        
         context = {
             'net_income': net_income
         }
