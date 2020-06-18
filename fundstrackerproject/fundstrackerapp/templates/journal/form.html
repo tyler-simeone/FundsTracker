@@ -1,0 +1,36 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/entryform.css' %}" />
+{% endblock %}
+
+
+{% block content %}
+
+{% comment %} {% if income_source.id is not None %} {% endcomment %}
+    {% comment %} <form action="{% url 'fundstrackerapp:income_source' income_source.id %}" method="post"> {% endcomment %}
+        {% comment %} <input type="hidden" name="actual_method" value="PUT"> {% endcomment %}
+{% comment %} {% else %} {% endcomment %}
+    <form action="{% url 'fundstrackerapp:journal_list' %}" method="post">
+{% comment %} {% endif %} {% endcomment %}
+      {% csrf_token %}
+      <fieldset>
+          <label for="name">Entry:</label>
+          <textarea id="name" type="text" name="name"></textarea>
+      </fieldset>
+      <fieldset>
+          <label for="goal">Attach Goal: </label>
+          <select id="goal" name="goal">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>etc</option>
+          </select>
+      </fieldset>
+
+       <input type="submit" value="Submit" />
+    </form>
+
+{% endblock %}
