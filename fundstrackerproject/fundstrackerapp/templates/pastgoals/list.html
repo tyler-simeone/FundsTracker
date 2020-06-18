@@ -15,7 +15,7 @@
                 {% for goal in past_one_month_goals %}
                 <li>{{ goal.goal }} {% if goal.is_completed %}<span>Completed</span>{% endif %} </li>
                 <span>Created: {{ goal.created_at }}</span>
-                {% if goal.is_completed != 1%}<button>Re-open Goal</button>{% endif %}
+                {% if goal.is_completed != 1%}<a href="{% url 'fundstrackerapp:past_goal_edit_form' goal.id %}"><button>Re-open Goal</button></a>{% endif %}
                 {% endfor %}
             </ul>
         </section>
@@ -26,7 +26,7 @@
                 {% for goal in past_three_month_goals %}
                 <li>{{ goal.goal }} {% if goal.is_completed %}<span>Completed</span>{% endif %} </li>
                 <span>Created: {{ goal.created_at }}</span>
-                {% if goal.is_completed != 1%}<button>Re-open Goal</button>{% endif %}
+                {% if goal.is_completed != 1%}<a href="{% url 'fundstrackerapp:past_goal_edit_form' goal.id %}"><button>Re-open Goal</button></a>{% endif %}
                 {% endfor %}
             </ul>
         </section>
@@ -37,7 +37,7 @@
                 {% for goal in past_six_month_goals %}
                 <li>{{ goal.goal }} {% if goal.is_completed %}<span>Completed</span>{% endif %} </li>
                 <span>Created: {{ goal.created_at }}</span>
-                {% if goal.is_completed != 1%}<button>Re-open Goal</button>{% endif %}
+                {% if goal.is_completed != 1%}<a href="{% url 'fundstrackerapp:past_goal_edit_form' goal.id %}"><button>Re-open Goal</button></a>{% endif %}
                 {% endfor %}
             </ul>
         </section>
@@ -48,7 +48,7 @@
                 {% for goal in past_twelve_month_goals %}
                 <li>{{ goal.goal }} {% if goal.is_completed %}<span>Completed</span>{% endif %} </li>
                 <span>Created: {{ goal.created_at }}</span>
-                {% if goal.is_completed != 1%}<button>Re-open Goal</button>{% endif %}
+                {% if goal.is_completed != 1%}<a href="{% url 'fundstrackerapp:past_goal_edit_form' goal.id %}"><button>Re-open Goal</button></a>{% endif %}
                 {% endfor %}
             </ul>
         </section>
