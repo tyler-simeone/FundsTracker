@@ -14,3 +14,5 @@ from .goals.details import goal_details
 from .goals.completed import goal_completed
 from .goals.completedlist import goal_completed_list
 from .pastgoals.list import past_goals_list
+from .pastgoals.details import past_goal_details
+from .pastgoals.form import past_goal_edit_form
