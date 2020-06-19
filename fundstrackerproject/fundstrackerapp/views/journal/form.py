@@ -10,6 +10,8 @@ def journal_entry_form(request):
 
     if request.method == 'GET':
 
+        # below code loops through all incomepleted financial goals
+        # filters out the current goals vs goals that have expired
         incomplete_financial_goals = FinancialGoal.objects.filter(user=request.user.id, is_completed=0)
         current_goals = []
         past_goals = []
@@ -40,9 +42,6 @@ def journal_entry_form(request):
         for goal in incomplete_financial_goals:
             if goal not in past_goals:
                 current_goals.append(goal)
-
-        print(past_goals)
-        print(current_goals)
 
 
         template = 'journal/form.html'
