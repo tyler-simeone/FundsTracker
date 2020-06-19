@@ -26,7 +26,8 @@ def journal_list(request):
         
         new_entry = JournalEntry.objects.create(
             entry = form_data['entry'],
-            user_id = request.user.id
+            user_id = request.user.id, 
+            financial_goal_id = form_data['goal']
         )        
 
         return redirect(reverse('fundstrackerapp:journal_list'))
