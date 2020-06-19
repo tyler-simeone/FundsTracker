@@ -38,16 +38,17 @@ def journal_entry_form(request):
                 past_goals.append(goal)
 
         for goal in incomplete_financial_goals:
-            for past_goal in past_goals:
-                if goal != past_goal:
-                    current_goals.append(goal)
+            if goal not in past_goals:
+                current_goals.append(goal)
 
         print(past_goals)
         print(current_goals)
 
 
         template = 'journal/form.html'
-        context = {}
+        context = {
+            'current_goals': current_goals
+        }
 
         return render(request, template, context)
       
