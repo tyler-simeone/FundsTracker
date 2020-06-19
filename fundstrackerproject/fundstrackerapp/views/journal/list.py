@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, reverse
-from fundstrackerapp.models import JournalEntry
+from fundstrackerapp.models import JournalEntry, FinancialGoal
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
@@ -9,12 +9,14 @@ def journal_list(request):
 
     if request.method == 'GET':
         all_entries = JournalEntry.objects.filter(user=request.user.id)
+        goals = FinancialGoal.objects.filter(user=request.user.id)
         user = User.objects.get(pk=request.user.id)
 
         template = 'journal/list.html'
         context = {
             'user': user,
             'all_entries': all_entries,
+            'goals': goals
         }
 
         return render(request, template, context)
