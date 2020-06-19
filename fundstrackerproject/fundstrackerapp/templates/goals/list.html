@@ -16,7 +16,60 @@
             <section class="one_month_goals">
                 <h1>1 Month</h1>
                 <ul>
-                    {% for goal in one_month_current_goals %}
+                    {% for goal in current_goals %}
+                        {% if goal.timeframe == 1 %}
+                            <div class="goal__container">
+                                <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
+                                    <li>{{ goal.goal }}</li>
+                                </a>
+                                <span>Created: {{ goal.created_at }}</span>
+                                <form action="{% url 'fundstrackerapp:goal_completed' goal.id %}" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="actual_method" value="PUT" />
+                                    <button type="submit">Completed</button>
+                                </form>
+                                {% for entry in journal_entries %}
+                                    {% if entry.financial_goal_id == goal.id %}
+                                    <a href="{% url 'fundstrackerapp:journal_entry_details' goal.id %}"><button>View Entries</button></a>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </section>
+
+            <section class="three_month_goals">
+                <h1>3 Month</h1>
+                <ul>
+                    {% for goal in current_goals %}
+                        {% if goal.timeframe == 3 %}
+                            <div class="goal__container">
+                                <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
+                                    <li>{{ goal.goal }}</li>
+                                </a>
+                                <span>Created: {{ goal.created_at }}</span>
+                                <form action="{% url 'fundstrackerapp:goal_completed' goal.id %}" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="actual_method" value="PUT" />
+                                    <button type="submit">Completed</button>
+                                </form>
+                                {% for entry in journal_entries %}
+                                    {% if entry.financial_goal_id == goal.id %}
+                                    <a href="{% url 'fundstrackerapp:journal_entry_details' goal.id %}"><button>View Entries</button></a>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </section>
+
+            <section class="six_month_goals">
+                <h1>6 Month</h1>
+                <ul>
+                    {% for goal in current_goals %}
+                        {% if goal.timeframe == 6 %}
                         <div class="goal__container">
                             <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
                                 <li>{{ goal.goal }}</li>
@@ -33,54 +86,7 @@
                                 {% endif %}
                             {% endfor %}
                         </div>
-                    {% endfor %}
-                </ul>
-            </section>
-
-            <section class="three_month_goals">
-                <h1>3 Month</h1>
-                <ul>
-                    {% for goal in three_month_current_goals %}
-                    <div class="goal__container">
-                        <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
-                            <li>{{ goal.goal }}</li>
-                        </a>
-                        <span>Created: {{ goal.created_at }}</span>
-                        <form action="{% url 'fundstrackerapp:goal_completed' goal.id %}" method="post">
-                            {% csrf_token %}
-                            <input type="hidden" name="actual_method" value="PUT" />
-                            <button type="submit">Completed</button>
-                        </form>
-                        {% for entry in journal_entries %}
-                            {% if entry.financial_goal_id == goal.id %}
-                            <a href="{% url 'fundstrackerapp:journal_entry_details' goal.id %}"><button>View Entries</button></a>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                    {% endfor %}
-                </ul>
-            </section>
-
-            <section class="six_month_goals">
-                <h1>6 Month</h1>
-                <ul>
-                    {% for goal in six_month_current_goals %}
-                    <div class="goal__container">
-                        <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
-                            <li>{{ goal.goal }}</li>
-                        </a>
-                        <span>Created: {{ goal.created_at }}</span>
-                        <form action="{% url 'fundstrackerapp:goal_completed' goal.id %}" method="post">
-                            {% csrf_token %}
-                            <input type="hidden" name="actual_method" value="PUT" />
-                            <button type="submit">Completed</button>
-                        </form>
-                        {% for entry in journal_entries %}
-                            {% if entry.financial_goal_id == goal.id %}
-                            <a href="{% url 'fundstrackerapp:journal_entry_details' goal.id %}"><button>View Entries</button></a>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
+                        {% endif %}
                     {% endfor %}
                 </ul>
             </section>
@@ -88,23 +94,25 @@
             <section class="twelve_month_goals">
                 <h1>12 Month</h1>
                 <ul>
-                    {% for goal in twelve_month_current_goals %}
-                    <div class="goal__container">
-                        <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
-                            <li>{{ goal.goal }}</li>
-                        </a>
-                        <span>Created: {{ goal.created_at }}</span>
-                        <form action="{% url 'fundstrackerapp:goal_completed' goal.id %}" method="post">
-                            {% csrf_token %}
-                            <input type="hidden" name="actual_method" value="PUT" />
-                            <button type="submit">Completed</button>
-                        </form>
-                        {% for entry in journal_entries %}
-                            {% if entry.financial_goal_id == goal.id %}
-                            <a href="{% url 'fundstrackerapp:journal_entry_details' goal.id %}"><button>View Entries</button></a>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
+                    {% for goal in current_goals %}
+                        {% if goal.timeframe == 12 %}
+                            <div class="goal__container">
+                                <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
+                                    <li>{{ goal.goal }}</li>
+                                </a>
+                                <span>Created: {{ goal.created_at }}</span>
+                                <form action="{% url 'fundstrackerapp:goal_completed' goal.id %}" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="actual_method" value="PUT" />
+                                    <button type="submit">Completed</button>
+                                </form>
+                                {% for entry in journal_entries %}
+                                    {% if entry.financial_goal_id == goal.id %}
+                                    <a href="{% url 'fundstrackerapp:journal_entry_details' goal.id %}"><button>View Entries</button></a>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
                     {% endfor %}
                 </ul>
             </section>
