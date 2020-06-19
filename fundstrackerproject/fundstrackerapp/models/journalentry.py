@@ -7,7 +7,7 @@ class JournalEntry (models.Model):
 
     entry = models.CharField(max_length=250)
     created_at = models.DateTimeField(auto_now_add=True)
-    financial_goal = models.ForeignKey(FinancialGoal, default=4, on_delete=models.CASCADE)
+    financial_goal = models.ForeignKey(FinancialGoal, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
