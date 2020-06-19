@@ -24,20 +24,12 @@
             <ul>
                 {% for entry in all_entries %}
                 <div class="journal_entry__container">
-                    {% comment %} <a href="{% url 'fundstrackerapp:income_edit_form' income.id %}"> {% endcomment %}
-                        <li>{{ user.first_name }}: {{ entry.entry }}</li>
-                        {% for goal in goals %}
-                            {% if goal.id == entry.financial_goal_id %}
-                                <span>Goal: {{ goal.goal }}</span>
-                            {% endif %}
-                        {% endfor %}
-                    {% comment %} </a> {% endcomment %}
-                    
-                    {% comment %} <form action="{% url 'fundstrackerapp:income_source' income.id %}" method="POST">
-                        {% csrf_token %}
-                        <input type="hidden" name="actual_method" value="DELETE" />
-                        <button onclick="return confirm('Are you sure?');">Delete</button>
-                    </form> {% endcomment %}
+                    <li>{{ user.first_name }}: {{ entry.entry }}</li>
+                    {% for goal in goals %}
+                        {% if goal.id == entry.financial_goal_id %}
+                            <span>Goal: {{ goal.goal }}</span>
+                        {% endif %}
+                    {% endfor %}
                 </div>
                 {% endfor %}
             </ul>

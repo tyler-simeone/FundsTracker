@@ -21,8 +21,6 @@ def journal_list(request):
 
         return render(request, template, context)
       
-    # Need to figure out how to add new entry's ID as FK to 
-    # financial goal
     elif request.method == 'POST':
         form_data = request.POST
         
