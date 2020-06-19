@@ -16,3 +16,6 @@ from .goals.completedlist import goal_completed_list
 from .pastgoals.list import past_goals_list
 from .pastgoals.details import past_goal_details
 from .pastgoals.form import past_goal_edit_form
+from .journal.list import journal_list
+from .journal.form import journal_entry_form
+from .journal.details import journal_entry_details

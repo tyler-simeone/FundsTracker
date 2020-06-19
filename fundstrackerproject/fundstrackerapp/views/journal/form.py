@@ -1,15 +1,17 @@
 from django.shortcuts import render, redirect, reverse
-from fundstrackerapp.models import FinancialGoal, JournalEntry
+from fundstrackerapp.models import FinancialGoal
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 import datetime
 
+
 @login_required
-def goal_list(request):
+def journal_entry_form(request):
 
     if request.method == 'GET':
 
-        journal_entries = JournalEntry.objects.filter(user=request.user.id)
+        # below code loops through all incomepleted financial goals
+        # filters out the current goals vs goals that have expired
         incomplete_financial_goals = FinancialGoal.objects.filter(user=request.user.id, is_completed=0)
         current_goals = []
         past_goals = []
@@ -40,24 +42,24 @@ def goal_list(request):
         for goal in incomplete_financial_goals:
             if goal not in past_goals:
                 current_goals.append(goal)
-    
 
-        template = 'goals/list.html'
+
+        template = 'journal/form.html'
         context = {
-            'current_goals': current_goals,
-            'journal_entries': journal_entries
+            'current_goals': current_goals
         }
 
         return render(request, template, context)
-    
-    elif request.method == 'POST':
-        form_data = request.POST
+      
+# @login_required
+# def journal_entry_edit_form(request, goal_id):
 
-        new_goal = FinancialGoal.objects.create(
-            goal = form_data['name'],
-            timeframe = form_data['time_horizon'],
-            user_id = request.user.id,
-            is_completed = 0
-        )
+#     if request.method == 'GET':
+#         financial_goal = FinancialGoal.objects.get(pk=goal_id)
 
-        return redirect(reverse('fundstrackerapp:goals'))
+#         template = 'goals/form.html'
+#         context = {
+#             'financial_goal': financial_goal
+#         }
+
+#         return render(request, template, context)

@@ -7,15 +7,75 @@
 
 {% block content %}
 <div class="completed_goals__container">
-    <h1>Completed Goals:</h1>
-    <ul>
-    {% for goal in completed_goals %}
-        <li>{{ goal.goal }}</li>
-        <span>Timeframe: {{ goal.timeframe }} Month</span>
-        <br />
-        <span>Created: {{ goal.created_at }}</span>
-    {% endfor %}
-    </ul>
+
+    <section class="one_month_goals">
+        <h1>One Month Goals:</h1>
+        <ul>
+            {% for goal in completed_goals %}
+                {% if goal.timeframe == 1 %}
+                    <li>{{ goal.goal }}</li>
+                    <span>Created: {{ goal.created_at }}</span>
+                    {% comment %} <form action="{% url 'fundstrackerapp:past_goal_details' goal.id %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="actual_method" value="DELETE" />
+                        <button onclick="return confirm('Are you sure?');">Delete</button>
+                    </form> {% endcomment %}
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </section>
+    
+    <section class="three_month_goals">
+        <h1>Three Month Goals:</h1>
+        <ul>
+            {% for goal in completed_goals %}
+                {% if goal.timeframe == 3 %}
+                    <li>{{ goal.goal }}</li>
+                    <span>Created: {{ goal.created_at }}</span>
+                    {% comment %} <form action="{% url 'fundstrackerapp:past_goal_details' goal.id %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="actual_method" value="DELETE" />
+                        <button onclick="return confirm('Are you sure?');">Delete</button>
+                    </form> {% endcomment %}
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section class="six_month_goals">
+        <h1>Six Month Goals:</h1>
+        <ul>
+            {% for goal in completed_goals %}
+                {% if goal.timeframe == 6 %}
+                    <li>{{ goal.goal }}</li>
+                    <span>Created: {{ goal.created_at }}</span>
+                    {% comment %} <form action="{% url 'fundstrackerapp:past_goal_details' goal.id %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="actual_method" value="DELETE" />
+                        <button onclick="return confirm('Are you sure?');">Delete</button>
+                    </form> {% endcomment %}
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section class="twelve_month_goals">
+        <h1>Twelve Month Goals:</h1>
+        <ul>
+            {% for goal in completed_goals %}
+                {% if goal.timeframe == 12 %}
+                    <li>{{ goal.goal }}</li>
+                    <span>Created: {{ goal.created_at }}</span>
+                    {% comment %} <form action="{% url 'fundstrackerapp:past_goal_details' goal.id %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="actual_method" value="DELETE" />
+                        <button onclick="return confirm('Are you sure?');">Delete</button>
+                    </form> {% endcomment %}
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </section>
+
     <a href="{% url 'fundstrackerapp:goals' %}">
         <button>Back to Goals</button>
     </a>

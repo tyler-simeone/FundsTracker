@@ -26,5 +26,8 @@ urlpatterns = [
     path('pastgoals/', past_goals_list, name='past_goals_list'),
     path('pastgoals/<int:goal_id>/form', past_goal_edit_form, name='past_goal_edit_form'),
     path('pastgoals/<int:goal_id>/', past_goal_details, name='past_goal_details'),
-
+    path('journal/', journal_list, name='journal_list'),
+    path('journal/addentry', journal_entry_form, name='journal_entry_form'),
+    path('journal/<int:goal_id>/', journal_entry_details, name='journal_entry_details'),
+    
 ]

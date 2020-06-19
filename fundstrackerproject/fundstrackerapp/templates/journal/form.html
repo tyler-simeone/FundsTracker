@@ -1,0 +1,35 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/entryform.css' %}" />
+{% endblock %}
+
+
+{% block content %}
+
+{% comment %} {% if income_source.id is not None %} {% endcomment %}
+    {% comment %} <form action="{% url 'fundstrackerapp:income_source' income_source.id %}" method="post"> {% endcomment %}
+        {% comment %} <input type="hidden" name="actual_method" value="PUT"> {% endcomment %}
+{% comment %} {% else %} {% endcomment %}
+    <form action="{% url 'fundstrackerapp:journal_list' %}" method="post">
+{% comment %} {% endif %} {% endcomment %}
+      {% csrf_token %}
+      <fieldset>
+          <label for="entry">Entry:</label>
+          <textarea id="entry" type="text" name="entry"></textarea>
+      </fieldset>
+      <fieldset>
+          <label for="goal">Attach to Goal: </label>
+          <select id="goal" name="goal">
+            <option hidden disabled selected value> -- select an option -- </option>
+            {% for goal in current_goals %}
+            <option value="{{ goal.id }}">{{ goal.goal }}</option>
+            {% endfor %}
+          </select>
+      </fieldset>
+
+       <input type="submit" value="Submit" />
+    </form>
+
+{% endblock %}
