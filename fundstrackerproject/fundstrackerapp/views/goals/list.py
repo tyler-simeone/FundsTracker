@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, reverse
-from fundstrackerapp.models import FinancialGoal
+from fundstrackerapp.models import FinancialGoal, JournalEntry
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 import datetime
@@ -9,6 +9,7 @@ def goal_list(request):
 
     if request.method == 'GET':
 
+        journal_entries = JournalEntry.objects.filter(user=request.user.id)
         one_month_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=1, is_completed=0)
         past_one_month_goals = []
         
@@ -206,7 +207,8 @@ def goal_list(request):
             'one_month_current_goals': one_month_current_goals,
             'three_month_current_goals': three_month_current_goals,
             'six_month_current_goals': six_month_current_goals,
-            'twelve_month_current_goals': twelve_month_current_goals
+            'twelve_month_current_goals': twelve_month_current_goals,
+            'journal_entries': journal_entries
         }
 
         return render(request, template, context)
