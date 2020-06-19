@@ -20,8 +20,9 @@
           <textarea id="entry" type="text" name="entry"></textarea>
       </fieldset>
       <fieldset>
-          <label for="goal">Attach Goal: </label>
+          <label for="goal">Attach to Goal: </label>
           <select id="goal" name="goal">
+            <option hidden disabled selected value> -- select an option -- </option>
             {% for goal in current_goals %}
             <option value="{{ goal.id }}">{{ goal.goal }}</option>
             {% endfor %}
