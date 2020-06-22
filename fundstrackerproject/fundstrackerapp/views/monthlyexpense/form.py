@@ -16,13 +16,20 @@ def expense_form(request):
       
 @login_required
 def expense_edit_form(request, expense_id):
+        
+    expense = MonthlyExpense.objects.get(pk=expense_id)
 
-    if request.method == 'GET':
-        expense = MonthlyExpense.objects.get(pk=expense_id)
+    if expense.user_id == request.user.id:
 
-        template = 'expenses/form.html'
-        context = {
-            'expense': expense
-        }
+        if request.method == 'GET':
 
-        return render(request, template, context)
+            template = 'expenses/form.html'
+            context = {
+                'expense': expense
+            }
+
+            return render(request, template, context)
+
+    else:
+
+        return redirect(reverse('fundstrackerapp:home'))

@@ -21,51 +21,65 @@ def net_income_list(request):
 
         net_income = total_income - total_expense
 
-        # Now need to get completed vs current goals for the user
 
-        # ONE MONTH PROGRESS %
+
+        # Now need to filter out past goals.. need to only reflect current data
+
+        # ONE MONTH PROGRESS 
         one_month_total_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=1)
-        one_month_total_goals_length = len(one_month_total_goals)
+        one_month_progress_percentage = 0
 
-        one_month_completed_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=1, is_completed=1)
-        one_month_completed_goals_length = len(one_month_completed_goals)
+        if one_month_total_goals:
+            one_month_total_goals_length = len(one_month_total_goals)
+
+            one_month_completed_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=1, is_completed=1)
+            one_month_completed_goals_length = len(one_month_completed_goals)
 
 
-        one_month_progress_percentage_deci = one_month_completed_goals_length / one_month_total_goals_length
-        one_month_progress_percentage = int(one_month_progress_percentage_deci * 100)
+            one_month_progress_percentage_deci = one_month_completed_goals_length / one_month_total_goals_length
+            one_month_progress_percentage = int(one_month_progress_percentage_deci * 100)
 
-        # THREE MONTH PROGRESS %
+        # THREE MONTH PROGRESS 
         three_month_total_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=3)
-        three_month_total_goals_length = len(three_month_total_goals)
+        three_month_progress_percentage = 0
 
-        three_month_completed_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=3, is_completed=1)
-        three_month_completed_goals_length = len(three_month_completed_goals)
+        if three_month_total_goals:
+            three_month_total_goals_length = len(three_month_total_goals)
+
+            three_month_completed_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=3, is_completed=1)
+            three_month_completed_goals_length = len(three_month_completed_goals)
 
 
-        three_month_progress_percentage_deci = three_month_completed_goals_length / three_month_total_goals_length
-        three_month_progress_percentage = int(three_month_progress_percentage_deci * 100)
+            three_month_progress_percentage_deci = three_month_completed_goals_length / three_month_total_goals_length
+            three_month_progress_percentage = int(three_month_progress_percentage_deci * 100)
         
-        # SIX MONTH PROGRESS %
+        # SIX MONTH PROGRESS 
         six_month_total_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=6)
-        six_month_total_goals_length = len(six_month_total_goals)
+        six_month_progress_percentage = 0
 
-        six_month_completed_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=6, is_completed=1)
-        six_month_completed_goals_length = len(six_month_completed_goals)
+        if six_month_total_goals:
+            six_month_total_goals_length = len(six_month_total_goals)
+
+            six_month_completed_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=6, is_completed=1)
+            six_month_completed_goals_length = len(six_month_completed_goals)
 
 
-        six_month_progress_percentage_deci = six_month_completed_goals_length / six_month_total_goals_length
-        six_month_progress_percentage = int(six_month_progress_percentage_deci * 100)
+            six_month_progress_percentage_deci = six_month_completed_goals_length / six_month_total_goals_length
+            six_month_progress_percentage = int(six_month_progress_percentage_deci * 100)
         
-        # TWELVE MONTH PROGRESS %
+        # TWELVE MONTH PROGRESS 
         twelve_month_total_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=12)
-        twelve_month_total_goals_length = len(twelve_month_total_goals)
+        twelve_month_progress_percentage = 0
 
-        twelve_month_completed_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=12, is_completed=1)
-        twelve_month_completed_goals_length = len(twelve_month_completed_goals)
+        if twelve_month_total_goals:
+            twelve_month_total_goals_length = len(twelve_month_total_goals)
+
+            twelve_month_completed_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=12, is_completed=1)
+            twelve_month_completed_goals_length = len(twelve_month_completed_goals)
 
 
-        twelve_month_progress_percentage_deci = twelve_month_completed_goals_length / twelve_month_total_goals_length
-        twelve_month_progress_percentage = int(twelve_month_progress_percentage_deci * 100)
+            twelve_month_progress_percentage_deci = twelve_month_completed_goals_length / twelve_month_total_goals_length
+            twelve_month_progress_percentage = int(twelve_month_progress_percentage_deci * 100)
 
         template = 'netincome/list.html'
         

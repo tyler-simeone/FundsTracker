@@ -12,10 +12,6 @@
     {% endblock %}
 </head>
 
-{% comment %} 
-    THIS IS MY MVP BRANCH FOR FUNDSTRACKER
-{% endcomment %}
-
 <body>
 
     <nav id="site-nav">
@@ -24,9 +20,12 @@
             <li class="navList__route"><a href="{% url 'fundstrackerapp:account' %}">Account</a></li>
             <li class="navList__route"><a href="{% url 'fundstrackerapp:goals' %}">Goals</a></li>
             <li class="navList__route"><a href="{% url 'fundstrackerapp:journal_list' %}">Journal</a></li>
+            {% if user.is_authenticated %}
+            <li class="navList__route"><a href="{% url 'fundstrackerapp:logout' %}">Logout</a></li>
+            {% else %}
             <li class="navList__route"><a href="{% url 'fundstrackerapp:login' %}">Login</a></li>
             <li class="navList__route"><a href="{% url 'fundstrackerapp:register' %}">Register</a></li>
-            <li class="navList__route"><a href="{% url 'fundstrackerapp:logout' %}">Logout</a></li>
+            {% endif %}
         </ul>
     </nav>
 
