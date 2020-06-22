@@ -5,13 +5,20 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def past_goal_edit_form(request, goal_id):
+    
+    financial_goal = FinancialGoal.objects.get(pk=goal_id)
 
-    if request.method == 'GET':
-        financial_goal = FinancialGoal.objects.get(pk=goal_id)
+    if financial_goal.user_id == request.user.id:
 
-        template = 'pastgoals/form.html'
-        context = {
-            'financial_goal': financial_goal
-        }
+        if request.method == 'GET':
 
-        return render(request, template, context)
+            template = 'pastgoals/form.html'
+            context = {
+                'financial_goal': financial_goal
+            }
+
+            return render(request, template, context)
+
+    else:
+
+        return redirect(reverse('fundstrackerapp:home'))
