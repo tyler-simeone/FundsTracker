@@ -21,9 +21,11 @@ def net_income_list(request):
 
         net_income = total_income - total_expense
 
-        # Now need to get completed vs current goals for the user
 
-        # ONE MONTH PROGRESS %
+
+        # Now need to filter out past goals.. need to only reflect current data
+
+        # ONE MONTH PROGRESS 
         one_month_total_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=1)
         one_month_total_goals_length = len(one_month_total_goals)
 
@@ -34,7 +36,7 @@ def net_income_list(request):
         one_month_progress_percentage_deci = one_month_completed_goals_length / one_month_total_goals_length
         one_month_progress_percentage = int(one_month_progress_percentage_deci * 100)
 
-        # THREE MONTH PROGRESS %
+        # THREE MONTH PROGRESS 
         three_month_total_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=3)
         three_month_total_goals_length = len(three_month_total_goals)
 
@@ -45,7 +47,7 @@ def net_income_list(request):
         three_month_progress_percentage_deci = three_month_completed_goals_length / three_month_total_goals_length
         three_month_progress_percentage = int(three_month_progress_percentage_deci * 100)
         
-        # SIX MONTH PROGRESS %
+        # SIX MONTH PROGRESS 
         six_month_total_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=6)
         six_month_total_goals_length = len(six_month_total_goals)
 
@@ -56,7 +58,7 @@ def net_income_list(request):
         six_month_progress_percentage_deci = six_month_completed_goals_length / six_month_total_goals_length
         six_month_progress_percentage = int(six_month_progress_percentage_deci * 100)
         
-        # TWELVE MONTH PROGRESS %
+        # TWELVE MONTH PROGRESS 
         twelve_month_total_goals = FinancialGoal.objects.filter(user=request.user.id, timeframe=12)
         twelve_month_total_goals_length = len(twelve_month_total_goals)
 
