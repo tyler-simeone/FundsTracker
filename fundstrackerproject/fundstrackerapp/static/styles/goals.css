@@ -1,0 +1,36 @@
+.current_goals_list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav_links {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.goals_header {
+    font-size: 3em;
+}
+
+.goal_list__container {
+    margin-top: 10px;
+}
+
+.goal__container {
+    margin-top: 5px;
+}
+
+.buttons__container {
+    display: flex;
+}
+
+button:first-of-type {
+    margin-right: 5px;
+}
+
+.one_three_month_goals__container, 
+.six_twelve_month_goals__container {
+    display: flex;
+}
