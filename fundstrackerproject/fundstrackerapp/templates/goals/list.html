@@ -28,11 +28,15 @@
                                     <input type="hidden" name="actual_method" value="PUT" />
                                     <button type="submit">Completed</button>
                                 </form>
-                                {% for entry in journal_entries %}
-                                    {% if entry.financial_goal_id == goal.id %}
-                                    <a href="{% url 'fundstrackerapp:journal_entry_details' goal.id %}"><button>View Entries</button></a>
-                                    {% endif %}
-                                {% endfor %}
+                                {% if goal.entry_count %}
+                                <a href="{% url 'fundstrackerapp:journal_entry_details' goal.id %}">
+                                <button class="btn btn-primary btn-sm">View Entries 
+                                    <span class="badge badge-light">
+                                        {{ goal.entry_count }}
+                                    </span>
+                                </button>
+                                </a>
+                                {% endif %}
                             </div>
                         {% endif %}
                     {% endfor %}
@@ -54,11 +58,15 @@
                                     <input type="hidden" name="actual_method" value="PUT" />
                                     <button type="submit">Completed</button>
                                 </form>
-                                {% for entry in journal_entries %}
-                                    {% if entry.financial_goal_id == goal.id %}
-                                    <a href="{% url 'fundstrackerapp:journal_entry_details' goal.id %}"><button>View Entries</button></a>
-                                    {% endif %}
-                                {% endfor %}
+                                {% if goal.entry_count %}
+                                <a href="{% url 'fundstrackerapp:journal_entry_details' goal.id %}">
+                                <button class="btn btn-primary btn-sm">View Entries 
+                                    <span class="badge badge-light">
+                                        {{ goal.entry_count }}
+                                    </span>
+                                </button>
+                                </a>
+                                {% endif %}
                             </div>
                         {% endif %}
                     {% endfor %}
@@ -70,22 +78,26 @@
                 <ul>
                     {% for goal in current_goals %}
                         {% if goal.timeframe == 6 %}
-                        <div class="goal__container">
-                            <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
-                                <li>{{ goal.goal }}</li>
-                            </a>
-                            <span>Created: {{ goal.created_at }}</span>
-                            <form action="{% url 'fundstrackerapp:goal_completed' goal.id %}" method="post">
-                                {% csrf_token %}
-                                <input type="hidden" name="actual_method" value="PUT" />
-                                <button type="submit">Completed</button>
-                            </form>
-                            {% for entry in journal_entries %}
-                                {% if entry.financial_goal_id == goal.id %}
-                                <a href="{% url 'fundstrackerapp:journal_entry_details' goal.id %}"><button>View Entries</button></a>
+                            <div class="goal__container">
+                                <a href="{% url 'fundstrackerapp:goal_edit_form' goal.id %}">
+                                    <li>{{ goal.goal }}</li>
+                                </a>
+                                <span>Created: {{ goal.created_at }}</span>
+                                <form action="{% url 'fundstrackerapp:goal_completed' goal.id %}" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="actual_method" value="PUT" />
+                                    <button type="submit">Completed</button>
+                                </form>
+                                {% if goal.entry_count %}
+                                <a href="{% url 'fundstrackerapp:journal_entry_details' goal.id %}">
+                                <button class="btn btn-primary btn-sm">View Entries 
+                                    <span class="badge badge-light">
+                                        {{ goal.entry_count }}
+                                    </span>
+                                </button>
+                                </a>
                                 {% endif %}
-                            {% endfor %}
-                        </div>
+                            </div>
                         {% endif %}
                     {% endfor %}
                 </ul>
@@ -106,11 +118,15 @@
                                     <input type="hidden" name="actual_method" value="PUT" />
                                     <button type="submit">Completed</button>
                                 </form>
-                                {% for entry in journal_entries %}
-                                    {% if entry.financial_goal_id == goal.id %}
-                                    <a href="{% url 'fundstrackerapp:journal_entry_details' goal.id %}"><button>View Entries</button></a>
-                                    {% endif %}
-                                {% endfor %}
+                                {% if goal.entry_count %}
+                                <a href="{% url 'fundstrackerapp:journal_entry_details' goal.id %}">
+                                <button class="btn btn-primary btn-sm">View Entries 
+                                    <span class="badge badge-light">
+                                        {{ goal.entry_count }}
+                                    </span>
+                                </button>
+                                </a>
+                                {% endif %}
                             </div>
                         {% endif %}
                     {% endfor %}

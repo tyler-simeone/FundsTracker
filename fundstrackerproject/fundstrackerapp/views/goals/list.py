@@ -41,11 +41,15 @@ def goal_list(request):
             if goal not in past_goals:
                 current_goals.append(goal)
     
+        for goal in current_goals:
+            
+            entries = JournalEntry.objects.filter(financial_goal_id = goal.id)
+            goal.entry_count = len(entries)
 
         template = 'goals/list.html'
         context = {
             'current_goals': current_goals,
-            'journal_entries': journal_entries
+            'journal_entries': journal_entries,
         }
 
         return render(request, template, context)

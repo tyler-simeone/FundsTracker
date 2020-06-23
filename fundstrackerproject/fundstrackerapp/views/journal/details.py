@@ -24,28 +24,3 @@ def journal_entry_details(request, goal_id):
         }
 
         return render(request, template, context)
-
-    # if request.method == 'POST':
-    #     form_data = request.POST
-
-    #     if (
-    #         "actual_method" in form_data
-    #         and form_data["actual_method"] == "DELETE"
-    #     ):
-    #         income_source.delete()
-
-    #         return redirect(reverse('fundstrackerapp:account'))
-            
-    #     if (
-    #         "actual_method" in form_data
-    #         and form_data["actual_method"] == "PUT"
-    #     ):
-    #         income_source.name = form_data['name']
-    #         income_source.total = form_data['total']
-    #         income_source.save()
-
-    #         return redirect(reverse('fundstrackerapp:account'))
-
-            
-
-journal_entry_details
