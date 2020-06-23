@@ -41,11 +41,10 @@ def goal_list(request):
             if goal not in past_goals:
                 current_goals.append(goal)
     
-
         template = 'goals/list.html'
         context = {
             'current_goals': current_goals,
-            'journal_entries': journal_entries
+            'journal_entries': journal_entries,
         }
 
         return render(request, template, context)
