@@ -1,0 +1,14 @@
+.past_goals_list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.past_goals_header {
+    font-size: 3em;
+}
+
+.past_one_three_month_goals__container, 
+.past_six_twelve_month_goals__container {
+    display: flex;
+}
