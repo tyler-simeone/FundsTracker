@@ -9,7 +9,6 @@ class FinancialGoal (models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     is_completed = models.BooleanField(null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    entry_count = 0
 
     class Meta:
         verbose_name = ("financial goal")
