@@ -1,0 +1,19 @@
+.form__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-primary {
+    margin-top: 5px;
+}
+
+.goal_name__input {
+    margin-bottom: 5px;
+}
+
+.delete__button {
+    /* position: relative;
+    right: 100%; */
+    margin-top: -58px;
+}
