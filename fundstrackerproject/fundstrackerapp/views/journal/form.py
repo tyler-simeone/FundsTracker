@@ -50,16 +50,3 @@ def journal_entry_form(request):
         }
 
         return render(request, template, context)
-      
-# @login_required
-# def journal_entry_edit_form(request, goal_id):
-
-#     if request.method == 'GET':
-#         financial_goal = FinancialGoal.objects.get(pk=goal_id)
-
-#         template = 'goals/form.html'
-#         context = {
-#             'financial_goal': financial_goal
-#         }
-
-#         return render(request, template, context)
