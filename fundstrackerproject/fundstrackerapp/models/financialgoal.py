@@ -1,7 +1,6 @@
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
-# from .journalentry import JournalEntry
 
 class FinancialGoal (models.Model):
 
@@ -21,9 +20,3 @@ class FinancialGoal (models.Model):
 
     def get_absolute_url(self):
         return reverse("financialgoal_detail", kwargs={"pk": self.pk})
-
-    # @property
-    # def entry_count(self):
-    #     entries = JournalEntry.objects.filter(financial_goal_id = self.id)
-
-    #     return len(entries)
