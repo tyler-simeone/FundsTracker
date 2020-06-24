@@ -1,7 +1,38 @@
-canvas {
-    max-width: 800px;
+.homepage__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.net_income__container {
+    margin: 20px 0;
 }
 
 .net_income__total {
+    display: flex;
+    justify-content: center;
     font-size: 2em;
+}
+
+.details__button {
+    display: flex;
+    justify-content: center;
+}
+
+.progress__container {
+    margin-top: 20px;
+}
+
+.progress__header {
+    display: flex;
+    justify-content: center;
+}
+
+.canvas__container {
+    width: 800px;
+    height: 800px;
+}
+
+canvas {
+    max-width: 800px;
 }
