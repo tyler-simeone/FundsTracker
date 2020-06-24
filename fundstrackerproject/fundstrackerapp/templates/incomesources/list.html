@@ -21,42 +21,38 @@
 
         <section class="income_sources">
             <h1>Income Sources:</h1>
+            <div class="button__container">
+                <a href="{% url 'fundstrackerapp:income_form' %}">
+                    <button class="btn btn-outline-primary btn-sm">Add Income Source</button>
+                </a>
+            </div>
             <ul>
                 {% for income in all_incomes %}
                 <div class="income_source__container">
                     <a href="{% url 'fundstrackerapp:income_edit_form' income.id %}">
                         <li>{{ income.name }}: {{ income.total }}</li>
                     </a>
-                    
-                    <form action="{% url 'fundstrackerapp:income_source' income.id %}" method="POST">
-                        {% csrf_token %}
-                        <input type="hidden" name="actual_method" value="DELETE" />
-                        <button class="btn btn-danger btn-sm delete__button" onclick="return confirm('Are you sure?');">Delete</button>
-                    </form>
                 </div>
                 {% endfor %}
             </ul>
-            <a href="{% url 'fundstrackerapp:income_form' %}"><button>Add Income Source</button></a>
         </section>
 
         <section class="monthly_expenses">
             <h1>Monthly Expenses:</h1>
+            <div class="button__container">
+                <a href="{% url 'fundstrackerapp:expense_form' %}">
+                    <button class="btn btn-outline-primary btn-sm">Add Expense</button>
+                </a>
+            </div>
             <ul>
                 {% for expense in all_expenses %}
                 <div class="monthly_expense__container">
                     <a href="{% url 'fundstrackerapp:expense_edit_form' expense.id %}">
                         <li>{{ expense.name }}: {{ expense.total }}</li>
                     </a>
-                    
-                    {% comment %} <form action="{% url 'fundstrackerapp:expense_details' expense.id %}" method="POST">
-                        {% csrf_token %}
-                        <input type="hidden" name="actual_method" value="DELETE" />
-                        <button class="btn btn-danger btn-sm delete__button" onclick="return confirm('Are you sure?');">Delete</button>
-                    </form> {% endcomment %}
                 </div>
                 {% endfor %}
             </ul>
-            <a href="{% url 'fundstrackerapp:expense_form' %}"><button>Add Expense</button></a>
         </section>
     <div>
 {% endblock %}
