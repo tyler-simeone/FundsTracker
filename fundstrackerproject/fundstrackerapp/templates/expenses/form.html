@@ -9,6 +9,11 @@
 {% block content %}
 
 {% if expense.id is not None %}
+    <h1 class="header">Update Expense</h1>
+{% endif %}
+
+<div class="form__container">
+{% if expense.id is not None %}
     <form action="{% url 'fundstrackerapp:expense_details' expense.id %}" method="post">
         <input type="hidden" name="actual_method" value="PUT">
 {% else %}
@@ -18,14 +23,14 @@
       <input type="hidden" name="expense"/>
       <fieldset>
           <label for="name">Name:</label>
-          <input id="name" type="text" name="name" value="{{ expense.name }}" />
+          <input class="form-control expense_name__input" id="name" type="text" name="name" value="{{ expense.name }}" />
       </fieldset>
       <fieldset>
           <label for="total">Cost: </label>
-          <input id="total" type="text" name="total" value="{{ expense.total }}" />
+          <input class="form-control expense_name__input" id="total" type="text" name="total" value="{{ expense.total }}" />
       </fieldset>
 
-       <input type="submit" value="Submit" />
+       <input class="btn btn-primary btn-sm" type="submit" value="Submit" />
     </form>
 
     {% if expense.id is not None %}
@@ -35,5 +40,6 @@
             <button class="btn btn-danger btn-sm delete__button" onclick="return confirm('Are you sure?');">Delete</button>
         </form>
     {% endif %}
+</div>
 
 {% endblock %}
