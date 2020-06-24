@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-    <div>
+    <div class="account__container">
         <section class="user_info">
             <img />
             <div class="name_container">
@@ -31,7 +31,7 @@
                     <form action="{% url 'fundstrackerapp:income_source' income.id %}" method="POST">
                         {% csrf_token %}
                         <input type="hidden" name="actual_method" value="DELETE" />
-                        <button onclick="return confirm('Are you sure?');">Delete</button>
+                        <button class="btn btn-danger btn-sm delete__button" onclick="return confirm('Are you sure?');">Delete</button>
                     </form>
                 </div>
                 {% endfor %}
@@ -48,11 +48,11 @@
                         <li>{{ expense.name }}: {{ expense.total }}</li>
                     </a>
                     
-                    <form action="{% url 'fundstrackerapp:expense_details' expense.id %}" method="POST">
+                    {% comment %} <form action="{% url 'fundstrackerapp:expense_details' expense.id %}" method="POST">
                         {% csrf_token %}
                         <input type="hidden" name="actual_method" value="DELETE" />
-                        <button onclick="return confirm('Are you sure?');">Delete</button>
-                    </form>
+                        <button class="btn btn-danger btn-sm delete__button" onclick="return confirm('Are you sure?');">Delete</button>
+                    </form> {% endcomment %}
                 </div>
                 {% endfor %}
             </ul>
