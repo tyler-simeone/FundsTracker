@@ -27,13 +27,13 @@
                 </a>
             </div>
             <ul>
-                {% for income in all_incomes %}
                 <div class="income_source__container">
+                {% for income in all_incomes %}
                     <a href="{% url 'fundstrackerapp:income_edit_form' income.id %}">
-                        <li>{{ income.name }}: {{ income.total }}</li>
+                        <li class="">{{ income.name }}: {{ income.total }}</li>
                     </a>
-                </div>
                 {% endfor %}
+                </div>
             </ul>
         </section>
 
@@ -45,13 +45,13 @@
                 </a>
             </div>
             <ul>
-                {% for expense in all_expenses %}
                 <div class="monthly_expense__container">
+                {% for expense in all_expenses %}
                     <a href="{% url 'fundstrackerapp:expense_edit_form' expense.id %}">
                         <li>{{ expense.name }}: {{ expense.total }}</li>
                     </a>
-                </div>
                 {% endfor %}
+                </div>
             </ul>
         </section>
     <div>
