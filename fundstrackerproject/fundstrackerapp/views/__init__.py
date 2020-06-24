@@ -19,3 +19,4 @@ from .pastgoals.form import past_goal_edit_form
 from .journal.list import journal_list
 from .journal.form import journal_entry_form
 from .journal.details import journal_entry_details
+from .journal.delete import journal_entry_delete

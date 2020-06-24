@@ -29,5 +29,6 @@ urlpatterns = [
     path('journal/', journal_list, name='journal_list'),
     path('journal/addentry/', journal_entry_form, name='journal_entry_form'),
     path('journal/<int:goal_id>/', journal_entry_details, name='journal_entry_details'),
+    path('journal/delete/<int:entry_id>/', journal_entry_delete, name='journal_entry_delete'),
     
 ]

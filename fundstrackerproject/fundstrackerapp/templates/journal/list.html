@@ -30,6 +30,12 @@
                             <span class="entry_goal">Goal: {{ goal.goal }}</span>
                         {% endif %}
                     {% endfor %}
+
+                    <form action="{% url 'fundstrackerapp:journal_entry_delete' entry.id %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="actual_method" value="DELETE" />
+                        <button class="btn btn-danger btn-sm delete__button" onclick="return confirm('Are you sure?');">Delete</button>
+                    </form>
                 </div>
                 {% endfor %}
             </ul>
