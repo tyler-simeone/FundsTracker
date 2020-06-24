@@ -6,22 +6,20 @@
 {% endblock %}
 
 {% block content %}
-    <div>
+    <div class="entry_details">
         <h1>Journal Entries</h1>
-        <a href="{% url 'fundstrackerapp:goals' %}"><button>Back to Goals</button></a>
+        <a href="{% url 'fundstrackerapp:goals' %}"><button class="btn btn-outline-primary btn-sm">Back to Goals</button></a>
 
-        <div class="journal_entries__container">
-            <section class="journal_entries">
-                <ul>
-                    {% for entry in journal_entries %}
-                        <div class="entry__container">
-                            <div class="user">{{ user.first_name }} {{ user.last_name }}:</div>
-                            <div class="journal_entry">{{ entry.entry }}<div>
-                            <span>Created date: {{ entry.created_at }}</span>
-                        </div>
-                    {% endfor %}
-                </ul>
-            </section>
-        </div>
+        <section class="journal_entries__container">
+            <ul>
+                {% for entry in journal_entries %}
+                    <div class="entry__container">
+                        <div class="user">{{ user.first_name }} {{ user.last_name }}:</div>
+                        <div class="journal_entry">{{ entry.entry }}</div>
+                        <span>Created date: {{ entry.created_at }}</span>
+                    </div>
+                {% endfor %}
+            </ul>
+        </section>
     <div>
 {% endblock %}
