@@ -13,7 +13,23 @@
 }
 
 .journal_entry__container {
-    border-bottom: 1px solid lightgray;
+    display: flex;
     margin-bottom: 5px;
     margin-left: -30px;
+}
+
+.entry__body {
+    border-bottom: 1px solid lightgray;
+    width: 240px;
+}
+
+.delete_button__container {
+    position: relative;
+}
+
+.delete__button {
+    position: absolute;
+    bottom: 5px;
+    background-color: none;
+    /* margin-top: 5px; */
 }
