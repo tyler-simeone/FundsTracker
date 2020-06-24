@@ -16,6 +16,7 @@
 
 .goal_list__container {
     margin-top: 10px;
+    display: flex;
 }
 
 .goal__container {
@@ -28,9 +29,4 @@
 
 button:first-of-type {
     margin-right: 5px;
-}
-
-.one_three_month_goals__container, 
-.six_twelve_month_goals__container {
-    display: flex;
 }

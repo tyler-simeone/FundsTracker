@@ -6,6 +6,7 @@
 
 .past_goals__container {
     margin-top: 10px;
+    display: flex;
 }
 
 .past_goals_header {
@@ -13,11 +14,6 @@
 }
 
 .button__container {
-    display: flex;
-}
-
-.past_one_three_month_goals__container, 
-.past_six_twelve_month_goals__container {
     display: flex;
 }
 
