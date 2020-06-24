@@ -20,6 +20,10 @@
     margin-top: 5px;
 }
 
+.details__button:hover {
+    text-decoration: none;
+}
+
 .progress__container {
     margin-top: 10px;
 }
