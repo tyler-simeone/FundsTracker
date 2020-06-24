@@ -12,6 +12,7 @@
         {% if financial_goal.id is not None %}
         <form action="{% url 'fundstrackerapp:goal_details' financial_goal.id %}" method="post">
             <input type="hidden" name="actual_method" value="PUT">
+            <h1>Update Goal</h1>
         {% else %}
         <form action="{% url 'fundstrackerapp:goals' %}" method="post">
         {% endif %}
