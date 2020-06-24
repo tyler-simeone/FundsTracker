@@ -58,7 +58,7 @@ var myChart = new Chart(ctx, {
 {% block content %}
     <div class="homepage__container">
         <section class="expected_net_income">
-            <h1>Expected Net Income:</h1>
+            <h1>Monthly Net Income:</h1>
             <div class="net_income__container">
                 <div class="net_income__total {% if net_income > 0 %} text-success {% else %}text-danger{% endif %}">${{ net_income }}</div>
                 <a class="details__button" href="{% url 'fundstrackerapp:netincome_details' %}">
