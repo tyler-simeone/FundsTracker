@@ -1,0 +1,19 @@
+.journal_list__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user_info {
+    margin-left: -54px;
+}
+
+.entries__header {
+    margin-bottom: 10px;
+}
+
+.journal_entry__container {
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 5px;
+    margin-left: -30px;
+}
