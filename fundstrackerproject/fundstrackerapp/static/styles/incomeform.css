@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.form__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.goal_name__input {
+    margin-bottom: 5px;
+}
+
+.delete__button {
+    margin-top: -58px;
+    margin-left: 7px;
+}

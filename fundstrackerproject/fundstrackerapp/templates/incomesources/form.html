@@ -8,31 +8,37 @@
 
 {% block content %}
 
-{% if income_source.id is not None %}
-    <form action="{% url 'fundstrackerapp:income_source' income_source.id %}" method="post">
-        <input type="hidden" name="actual_method" value="PUT">
-{% else %}
-    <form action="{% url 'fundstrackerapp:account' %}" method="post">
-{% endif %}
-      {% csrf_token %}
-      <fieldset>
-          <label for="name">Name:</label>
-          <input id="name" type="text" name="name" value="{{ income_source.name }}" />
-      </fieldset>
-      <fieldset>
-          <label for="total">Total Income: </label>
-          <input id="total" type="text" name="total" value="{{ income_source.total }}" />
-      </fieldset>
-
-       <input type="submit" value="Submit" />
-    </form>
-
     {% if income_source.id is not None %}
-        <form action="{% url 'fundstrackerapp:income_source' income_source.id %}" method="POST">
-            {% csrf_token %}
-            <input type="hidden" name="actual_method" value="DELETE" />
-            <button class="btn btn-danger btn-sm delete__button" onclick="return confirm('Are you sure?');">Delete</button>
-        </form>
+    <h1 class="header">Update Income</h1>
     {% endif %}
+
+    <div class="form__container">
+    {% if income_source.id is not None %}
+        <form action="{% url 'fundstrackerapp:income_source' income_source.id %}" method="post">
+            <input type="hidden" name="actual_method" value="PUT">
+    {% else %}
+        <form action="{% url 'fundstrackerapp:account' %}" method="post">
+    {% endif %}
+            {% csrf_token %}
+            <fieldset>
+                <label for="name">Name:</label>
+                <input class="form-control goal_name__input" id="name" type="text" name="name" value="{{ income_source.name }}" />
+            </fieldset>
+            <fieldset>
+                <label for="total">Total Income: </label>
+                <input class="form-control goal_name__input" id="total" type="text" name="total" value="{{ income_source.total }}" />
+            </fieldset>
+
+            <input class="btn btn-primary btn-sm" type="submit" value="Submit" />
+        </form>
+
+        {% if income_source.id is not None %}
+            <form action="{% url 'fundstrackerapp:income_source' income_source.id %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="actual_method" value="DELETE" />
+                <button class="btn btn-danger btn-sm delete__button" onclick="return confirm('Are you sure?');">Delete</button>
+            </form>
+        {% endif %}
+    </div>
 
 {% endblock %}

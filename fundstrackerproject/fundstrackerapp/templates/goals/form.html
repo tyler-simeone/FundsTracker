@@ -8,11 +8,15 @@
 
 {% block content %}
 
+    {% if financial_goal.id is not None %}
+    <h1 class="header">Update Goal</h1>
+    {% endif %}
+
     <div class="form__container">
         {% if financial_goal.id is not None %}
         <form action="{% url 'fundstrackerapp:goal_details' financial_goal.id %}" method="post">
             <input type="hidden" name="actual_method" value="PUT">
-            <h1>Update Goal</h1>
+            {% comment %} <h1>Update Goal</h1> {% endcomment %}
         {% else %}
         <form action="{% url 'fundstrackerapp:goals' %}" method="post">
         {% endif %}
