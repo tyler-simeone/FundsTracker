@@ -22,11 +22,11 @@
             {% csrf_token %}
             <fieldset>
                 <label for="name">Name:</label>
-                <input class="form-control income_name__input" id="name" type="text" name="name" value="{{ income_source.name }}" />
+                <input class="form-control income_name__input" id="name" type="text" name="name" required value="{{ income_source.name }}" />
             </fieldset>
             <fieldset>
                 <label for="total">Total Income: </label>
-                <input class="form-control income_name__input" id="total" type="text" name="total" value="{{ income_source.total }}" />
+                <input class="form-control income_value__input" id="total" type="text" name="total" pattern="^[0-9]+(\.)?[0-9]+$" title="Please follow valid format" required placeholder="Ex: 150.00"  value="{{ income_source.total }}" />
             </fieldset>
 
             <input class="btn btn-primary btn-sm" type="submit" value="Submit" />
