@@ -1,0 +1,19 @@
+.account__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button__container {
+    display: flex;
+    justify-content: center;
+}
+
+.income_source__container {
+    margin-top: 10px;
+}
+
+.monthly_expense__container {
+    margin-top: 10px;
+    margin-left: 19px;
+}

@@ -59,12 +59,16 @@ var myChart = new Chart(ctx, {
     <div class="homepage__container">
         <section class="expected_net_income">
             <h1>Expected Net Income:</h1>
-            <div class="net_income__total">{{ net_income }}</div>
-            <a href="{% url 'fundstrackerapp:netincome_details' %}"><button>Details</button></a>
+            <div class="net_income__container">
+                <div class="net_income__total {% if net_income > 0 %} text-success {% else %}text-danger{% endif %}">${{ net_income }}</div>
+                <a class="details__button" href="{% url 'fundstrackerapp:netincome_details' %}">
+                    <button class="btn btn-outline-primary btn-sm">Details</button>
+                </a>
+            </div>
         </section>
         
-        <section class="plotly_graph__container">
-            <h1>Your Progress:</h1>
+        <section class="progress__container">
+            <h1 class="progress__header">Your Progress:</h1>
             <br />
             <div class="canvas__container">
                 <canvas id="myChart"></canvas>

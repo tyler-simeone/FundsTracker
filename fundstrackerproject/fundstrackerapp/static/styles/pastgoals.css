@@ -1,0 +1,22 @@
+.past_goals_list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.past_goals__container {
+    margin-top: 10px;
+    display: flex;
+}
+
+.past_goals_header {
+    font-size: 3em;
+}
+
+.button__container {
+    display: flex;
+}
+
+.btn-primary {
+    margin-right: 5px;
+}

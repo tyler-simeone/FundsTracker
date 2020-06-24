@@ -6,14 +6,9 @@
 {% endblock %}
 
 {% block content %}
-    <div>
-        <section>
-            <h1>Expected Net Income:</h1>
-            <div class="net_income__total">{{ net_income }}</div>
-        </section>
-
+    <div class="net_income_details__container">
         <section class="calculations">
-            <h1>How It's Calculated:</h1>
+            <h1 class="header">How It's Calculated:</h1>
             <div class="gross_income">
                 <h2>Gross Monthly Income:</h2>
                 <span>${{ total_income }}</span>
@@ -26,7 +21,11 @@
 
         <section class="result">
             <h1>Expected Net Income:</h1>
-            <div class="net_income__total">{{ net_income }}</div>
+            <span>{{ net_income }}</span>
         </section>
+
+        <a href="{% url 'fundstrackerapp:home' %}">
+            <button class="btn btn-outline-primary btn-sm">Back to Home</button>
+        </a>
     <div>
 {% endblock %}

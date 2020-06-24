@@ -8,37 +8,43 @@
 
 {% block content %}
 
-{% if financial_goal.id is not None %}
-    <form action="{% url 'fundstrackerapp:goal_details' financial_goal.id %}" method="post">
-        <input type="hidden" name="actual_method" value="PUT">
-{% else %}
-    <form action="{% url 'fundstrackerapp:goals' %}" method="post">
-{% endif %}
-      {% csrf_token %}
-      <fieldset>
-          <label for="name">Goal Name:</label>
-          <input id="name" type="text" name="name" value="{{ financial_goal.goal }}" />
-      </fieldset>
-      <fieldset>
-          <label for="time_horizon">Time Horizon:</label>
-          <select id="time_horizon" name="time_horizon" required>
-            <option hidden disabled selected value> -- select an option -- </option>
-            <option {% if financial_goal.timeframe == 1 %}selected="selected"{% endif %} value="1">1 Month</option>
-            <option {% if financial_goal.timeframe == 3 %}selected="selected"{% endif %} value="3">3 Months</option>
-            <option {% if financial_goal.timeframe == 6 %}selected="selected"{% endif %} value="6">6 Months</option>
-            <option {% if financial_goal.timeframe == 12 %}selected="selected"{% endif %} value="12">1 Year</option>
-          </select>
-      </fieldset>
-      
-       <input type="submit" value="Submit" />
-    </form>
-    
     {% if financial_goal.id is not None %}
-    <form action="{% url 'fundstrackerapp:goal_details' financial_goal.id %}" method="POST">
-        {% csrf_token %}
-        <input type="hidden" name="actual_method" value="DELETE" />
-        <button onclick="return confirm('Are you sure?');">Delete</button>
-    </form>
+    <h1 class="header">Update Goal</h1>
     {% endif %}
+
+    <div class="form__container">
+        {% if financial_goal.id is not None %}
+        <form action="{% url 'fundstrackerapp:goal_details' financial_goal.id %}" method="post">
+            <input type="hidden" name="actual_method" value="PUT">
+        {% else %}
+        <form action="{% url 'fundstrackerapp:goals' %}" method="post">
+        {% endif %}
+            {% csrf_token %}
+            <fieldset>
+                <label for="name">Goal Name:</label>
+                <input class="form-control goal_name__input" id="name" type="text" name="name" value="{{ financial_goal.goal }}" />
+            </fieldset>
+            <fieldset>
+                <label for="time_horizon">Time Horizon:</label>
+                <select class="form-control" id="time_horizon" name="time_horizon" required>
+                <option hidden disabled selected value> -- select an option -- </option>
+                <option {% if financial_goal.timeframe == 1 %}selected="selected"{% endif %} value="1">1 Month</option>
+                <option {% if financial_goal.timeframe == 3 %}selected="selected"{% endif %} value="3">3 Months</option>
+                <option {% if financial_goal.timeframe == 6 %}selected="selected"{% endif %} value="6">6 Months</option>
+                <option {% if financial_goal.timeframe == 12 %}selected="selected"{% endif %} value="12">1 Year</option>
+                </select>
+            </fieldset>
+            
+            <input class="btn btn-primary btn-sm" type="submit" value="Submit" />
+        </form>
+
+        {% if financial_goal.id is not None %}
+        <form action="{% url 'fundstrackerapp:goal_details' financial_goal.id %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="actual_method" value="DELETE" />
+            <button class="btn btn-danger btn-sm delete__button" onclick="return confirm('Are you sure?');">Delete</button>
+        </form>
+        {% endif %}
+    </div>
 
 {% endblock %}

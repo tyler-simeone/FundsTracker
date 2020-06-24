@@ -1,0 +1,22 @@
+.entry_details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.journal_entries__container {
+    margin-top: 20px;
+}
+
+.entry__container {
+    margin-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+}
+
+.journal_entry {
+    font-weight: bold;
+}
+
+.btn {
+    margin-top: 5px;
+}

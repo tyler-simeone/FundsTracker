@@ -8,6 +8,9 @@
 
 {% block content %}
 
+<h1 class="header">New Entry</h1>
+
+<div class="form__container">
 {% comment %} {% if income_source.id is not None %} {% endcomment %}
     {% comment %} <form action="{% url 'fundstrackerapp:income_source' income_source.id %}" method="post"> {% endcomment %}
         {% comment %} <input type="hidden" name="actual_method" value="PUT"> {% endcomment %}
@@ -17,11 +20,11 @@
       {% csrf_token %}
       <fieldset>
           <label for="entry">Entry:</label>
-          <textarea id="entry" type="text" name="entry"></textarea>
+          <textarea class="form-control" id="entry" type="text" name="entry"></textarea>
       </fieldset>
       <fieldset>
           <label for="goal">Attach to Goal: </label>
-          <select id="goal" name="goal">
+          <select class="form-control" id="goal" name="goal">
             <option hidden disabled selected value> -- select an option -- </option>
             {% for goal in current_goals %}
             <option value="{{ goal.id }}">{{ goal.goal }}</option>
@@ -29,7 +32,7 @@
           </select>
       </fieldset>
 
-       <input type="submit" value="Submit" />
+       <input class="btn btn-primary btn-sm" type="submit" value="Submit" />
     </form>
-
+</div>
 {% endblock %}

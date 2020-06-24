@@ -3,10 +3,12 @@
 
 {% block css %}
     <link rel="stylesheet" href="{% static 'styles/journallist.css' %}" />
+    {% comment %} Icon library {% endcomment %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {% endblock %}
 
 {% block content %}
-    <div>
+    <div class="journal_list__container">
         <section class="user_info">
             <img />
             <div class="name_container">
@@ -20,20 +22,31 @@
         </section>
 
         <section class="journal_entries">
-            <h1>Journal Entries:</h1>
+            <h1 class="entries__header">Journal Entries:</h1>
             <ul>
                 {% for entry in all_entries %}
                 <div class="journal_entry__container">
-                    <li>{{ user.first_name }}: {{ entry.entry }}</li>
-                    {% for goal in goals %}
-                        {% if goal.id == entry.financial_goal_id %}
-                            <span>Goal: {{ goal.goal }}</span>
-                        {% endif %}
-                    {% endfor %}
+                    <div class="entry__body">
+                        <li>{{ user.first_name }}: {{ entry.entry }}</li>
+                        {% for goal in goals %}
+                            {% if goal.id == entry.financial_goal_id %}
+                                <span class="entry_goal">Goal: {{ goal.goal }}</span>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="delete_button__container">
+                        <form action="{% url 'fundstrackerapp:journal_entry_delete' entry.id %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="actual_method" value="DELETE" />
+                            <button class="btn btn-danger btn-sm delete__button" onclick="return confirm('Are you sure?');"><i class="fa fa-trash"></i></button>
+                        </form>
+                    </div>
                 </div>
                 {% endfor %}
             </ul>
-            <a href="{% url 'fundstrackerapp:journal_entry_form' %}"><button>Add Journal Entry</button></a>
+            <a href="{% url 'fundstrackerapp:journal_entry_form' %}">
+                <button class="btn btn-primary btn-sm">Add Journal Entry</button>
+            </a>
         </section>
     <div>
 {% endblock %}
