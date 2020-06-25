@@ -4,6 +4,14 @@
     align-items: center;
 }
 
+.name_input_button__container {
+    display: flex;
+}
+
+.submit {
+    margin-left: 5px;
+}
+
 .button__container {
     display: flex;
     justify-content: center;
