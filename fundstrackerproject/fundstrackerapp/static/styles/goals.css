@@ -16,6 +16,7 @@
     margin-top: 10px;
 }
 
+/* Applies only to completed goal list template */
 .completed_goal__container {
     border-bottom: 1px solid lightgray;
     margin-bottom: 5px;

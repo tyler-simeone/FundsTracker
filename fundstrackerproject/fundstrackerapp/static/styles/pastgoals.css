@@ -18,6 +18,11 @@
     font-size: 3em;
 }
 
+.past_goal__container {
+    margin-top: 15px;
+    margin-left: -37px;
+}
+
 .button__container {
     display: flex;
 }
