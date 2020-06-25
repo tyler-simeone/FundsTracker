@@ -1,13 +1,27 @@
-.current_goals_list {
+.header_nav_links__container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-/* for completed goal list template */
-.completed_goals__container {
+
+/* Applies to current and completed goal list templates  */
+.goal_list__container {
+    margin-top: 10px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* Applies only to completed goal list template */
+.back_btn {
+    margin-top: 10px;
+}
+
+/* Applies only to completed goal list template */
+.completed_goal__container {
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    margin-left: -37px;
 }
 
 .nav_links {
@@ -20,13 +34,10 @@
     font-size: 3em;
 }
 
-.goal_list__container {
-    margin-top: 10px;
-    display: flex;
-}
 
 .goal__container {
-    margin-top: 5px;
+    margin-top: 15px;
+    margin-left: -37px;
 }
 
 .buttons__container {

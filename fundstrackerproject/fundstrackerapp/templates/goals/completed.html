@@ -7,15 +7,20 @@
 
 {% block content %}
 <div class="completed_goals__container">
-    <h1 class="goals_header">Completed Goals</h1>
+    <div class="header_nav_links__container">
+        <h1 class="goals_header">Completed Goals</h1>
+        <a href="{% url 'fundstrackerapp:goals' %}">
+            <button class="btn btn-outline-primary btn-sm back_btn">Back to Goals</button>
+        </a>
+    </div>
 
     <div class="goal_list__container">
         <section class="one_month_goals">
-            <h2>One Month Goals:</h2>
+            <h2>1 Month</h2>
             <ul>
                 {% for goal in completed_goals %}
                     {% if goal.timeframe == 1 %}
-                        <div class="goal__container">
+                        <div class="completed_goal__container">
                             <li>{{ goal.goal }}</li>
                             <span>Created: {{ goal.created_at }}</span>
                             {% comment %} <form action="{% url 'fundstrackerapp:past_goal_details' goal.id %}" method="post">
@@ -30,11 +35,11 @@
         </section>
         
         <section class="three_month_goals">
-            <h2>Three Month Goals:</h2>
+            <h2>3 Month</h2>
             <ul>
                 {% for goal in completed_goals %}
                     {% if goal.timeframe == 3 %}
-                        <div class="goal__container">
+                        <div class="completed_goal__container">
                             <li>{{ goal.goal }}</li>
                             <span>Created: {{ goal.created_at }}</span>
                             {% comment %} <form action="{% url 'fundstrackerapp:past_goal_details' goal.id %}" method="post">
@@ -49,11 +54,11 @@
         </section>
 
         <section class="six_month_goals">
-            <h2>Six Month Goals:</h2>
+            <h2>6 Month</h2>
             <ul>
                 {% for goal in completed_goals %}
                     {% if goal.timeframe == 6 %}
-                        <div class="goal__container">
+                        <div class="completed_goal__container">
                             <li>{{ goal.goal }}</li>
                             <span>Created: {{ goal.created_at }}</span>
                             {% comment %} <form action="{% url 'fundstrackerapp:past_goal_details' goal.id %}" method="post">
@@ -68,11 +73,11 @@
         </section>
 
         <section class="twelve_month_goals">
-            <h2>Twelve Month Goals:</h2>
+            <h2>12 Month</h2>
             <ul>
                 {% for goal in completed_goals %}
                     {% if goal.timeframe == 12 %}
-                        <div class="goal__container">
+                        <div class="completed_goal__container">
                             <li>{{ goal.goal }}</li>
                             <span>Created: {{ goal.created_at }}</span>
                             {% comment %} <form action="{% url 'fundstrackerapp:past_goal_details' goal.id %}" method="post">
@@ -87,8 +92,5 @@
         </section>
     </div>
 
-    <a href="{% url 'fundstrackerapp:goals' %}">
-        <button class="btn btn-outline-primary btn-sm">Back to Goals</button>
-    </a>
 <div>
 {% endblock %}

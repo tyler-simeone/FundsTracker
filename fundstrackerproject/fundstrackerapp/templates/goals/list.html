@@ -7,11 +7,13 @@
 
 {% block content %}
     <div class="current_goals_list">
-        <h1 class="goals_header">Goals</h1>
-        <div class="nav_links">
-            <a href="{% url 'fundstrackerapp:goal_form' %}"><button class="btn btn-outline-primary btn-sm">Create a New Goal</button></a>
-            <a href="{% url 'fundstrackerapp:past_goals_list' %}"><button class="btn btn-outline-primary btn-sm">View Past Goals</button></a>
-            <a href="{% url 'fundstrackerapp:goal_completed_list' %}"><button class="btn btn-outline-primary btn-sm">View Completed Goals</button></a>
+        <div class="header_nav_links__container">
+            <h1 class="goals_header">Goals</h1>
+            <div class="nav_links">
+                <a href="{% url 'fundstrackerapp:goal_form' %}"><button class="btn btn-outline-primary btn-sm">Create a New Goal</button></a>
+                <a href="{% url 'fundstrackerapp:past_goals_list' %}"><button class="btn btn-outline-primary btn-sm">View Past Goals</button></a>
+                <a href="{% url 'fundstrackerapp:goal_completed_list' %}"><button class="btn btn-outline-primary btn-sm">View Completed Goals</button></a>
+            </div>
         </div>
 
         <div class="goal_list__container">
