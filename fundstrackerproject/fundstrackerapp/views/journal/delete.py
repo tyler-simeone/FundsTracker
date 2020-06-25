@@ -7,6 +7,10 @@ from fundstrackerapp.models import JournalEntry
 @login_required
 def journal_entry_delete(request, entry_id):
 
+    # delete a journal entry from the DB based on the
+    # entry_id argument, then redirect back to the list of
+    # entries 
+
     entry = JournalEntry.objects.get(pk=entry_id)
 
     if request.method == 'POST':
