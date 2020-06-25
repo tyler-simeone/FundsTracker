@@ -7,7 +7,12 @@
 
 {% block content %}
     <div class="past_goals_list">
-        <h1 class="past_goals_header">Past Goals:</h1>
+        <div class="past_goals_header__container">
+            <h1 class="past_goals_header">Past Goals:</h1>
+            <a href="{% url 'fundstrackerapp:goals' %}">
+                <button class="btn btn-outline-primary btn-sm">Back to Goals</button>
+            </a>
+        </div>
         
         <div class="past_goals__container">
             <section class="one_month_goals">
@@ -91,10 +96,6 @@
                     {% endfor %}
                 </ul>
             </section>
-        </div>
-
-        <a href="{% url 'fundstrackerapp:goals' %}">
-            <button class="btn btn-outline-primary btn-sm">Back to Goals</button>
-        </a>
+        </div>        
     <div>
 {% endblock %}

@@ -11,12 +11,10 @@
     justify-content: space-around;
 }
 
-/* for completed goal list template */
-/* .completed_goals__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
+/* Applies only to completed goal list template */
+.back_btn {
+    margin-top: 10px;
+}
 
 .completed_goal__container {
     border-bottom: 1px solid lightgray;
