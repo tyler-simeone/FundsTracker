@@ -9,6 +9,14 @@
     align-items: center;
 }
 
+.back_btn {
+    margin: 10px 0;
+}
+
+fieldset:first-of-type {
+    margin-top: 5px;
+}
+
 .btn-primary {
     margin-top: 5px;
 }

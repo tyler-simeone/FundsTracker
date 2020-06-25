@@ -16,7 +16,7 @@
 
     <div class="goal_list__container">
         <section class="one_month_goals">
-            <h2>One Month Goals:</h2>
+            <h2>One Month</h2>
             <ul>
                 {% for goal in completed_goals %}
                     {% if goal.timeframe == 1 %}
@@ -35,7 +35,7 @@
         </section>
         
         <section class="three_month_goals">
-            <h2>Three Month Goals:</h2>
+            <h2>Three Month</h2>
             <ul>
                 {% for goal in completed_goals %}
                     {% if goal.timeframe == 3 %}
@@ -54,7 +54,7 @@
         </section>
 
         <section class="six_month_goals">
-            <h2>Six Month Goals:</h2>
+            <h2>Six Month</h2>
             <ul>
                 {% for goal in completed_goals %}
                     {% if goal.timeframe == 6 %}
@@ -73,7 +73,7 @@
         </section>
 
         <section class="twelve_month_goals">
-            <h2>Twelve Month Goals:</h2>
+            <h2>Twelve Month</h2>
             <ul>
                 {% for goal in completed_goals %}
                     {% if goal.timeframe == 12 %}
