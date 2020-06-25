@@ -26,12 +26,11 @@
 
 .delete_button__container {
     position: relative;
-    margin-top: 5px;
 }
 
 .delete__button {
     position: absolute;
-    bottom: 5px;
+    bottom: 10px;
+    left: 10px;
     background-color: none;
-    /* margin-top: 5px; */
 }

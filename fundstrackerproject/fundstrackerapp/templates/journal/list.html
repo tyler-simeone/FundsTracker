@@ -27,10 +27,10 @@
                 {% for entry in all_entries %}
                 <div class="journal_entry__container">
                     <div class="entry__body">
-                        <li>{{ user.first_name }}: {{ entry.entry }}</li>
+                        <li><strong>{{ user.first_name }}</strong>: {{ entry.entry }}</li>
                         {% for goal in goals %}
                             {% if goal.id == entry.financial_goal_id %}
-                                <span class="entry_goal">Goal: {{ goal.goal }}</span>
+                                <span class="entry_goal"><strong>Goal</strong>: {{ goal.goal }}</span>
                             {% endif %}
                         {% endfor %}
                     </div>

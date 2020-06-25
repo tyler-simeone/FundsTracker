@@ -18,10 +18,28 @@
 
 /* Applies only to completed goal list template */
 .completed_goal__container {
+    display: flex;
+}
+
+/* Applies only to completed goal list template */
+.completed_goal_body__container {
     border-bottom: 1px solid lightgray;
     margin-bottom: 5px;
     margin-top: 15px;
     margin-left: -37px;
+}
+
+/* Applies only to completed goal list template */
+.delete_btn__container {
+    position: relative;
+}
+
+/* Applies only to completed goal list template */
+.delete__button {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: none;
 }
 
 .nav_links {
