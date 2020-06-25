@@ -12,6 +12,7 @@ urlpatterns = [
     path('incomecalculation/', net_income_details, name='netincome_details'),
     path('account/', income_list, name='account'),
     path('account/addincome/', income_form, name='income_form'),
+    path('account/addname/<int:user_id>/', add_name, name='add_name'),
     path('account/updateincome/<int:income_id>/', income_edit_form, name='income_edit_form'),
     path('account/<int:income_id>/', income_details, name='income_source'),
     path('account/addexpense/', expense_form, name='expense_form'),
