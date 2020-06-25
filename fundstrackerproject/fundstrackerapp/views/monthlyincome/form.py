@@ -7,6 +7,8 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def income_form(request):
 
+    # renders a form to add income source
+
     if request.method == 'GET':
 
         template = 'incomesources/form.html'
@@ -16,6 +18,9 @@ def income_form(request):
       
 @login_required
 def income_edit_form(request, income_id):
+
+    # renders form to update existing income source values
+    # being passed in
     
     income_source = MonthlyIncome.objects.get(pk=income_id)
 

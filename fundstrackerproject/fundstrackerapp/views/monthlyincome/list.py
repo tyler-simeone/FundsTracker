@@ -7,10 +7,11 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def income_list(request):
 
+    # passes all incomes and expenses for the logged-in user
+    # into the list template (account page)
+
     if request.method == 'GET':
         all_incomes = MonthlyIncome.objects.filter(user=request.user.id)
-                
-
         all_expenses = MonthlyExpense.objects.filter(user=request.user.id)
         user = User.objects.get(pk=request.user.id)
 
@@ -24,6 +25,10 @@ def income_list(request):
         return render(request, template, context)
       
     elif request.method == 'POST':
+
+        # creates a new expense if hidden input in the form 
+        # contains "expense" value
+
         form_data = request.POST
 
         if ("expense" in form_data):
@@ -37,6 +42,8 @@ def income_list(request):
                 user_id = request.user.id
             )
         
+        # creates a new income for user
+
         else:
             total = form_data['total']
             split_total = total.split(',')
