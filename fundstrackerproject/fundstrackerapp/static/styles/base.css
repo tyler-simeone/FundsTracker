@@ -34,5 +34,14 @@ li {
 
 .nav_link:hover {
     text-decoration: none;
-    color: rgb(0, 66, 209);
+    color: rgba(78, 78, 78, 0.603);
+}
+
+.logo-link {
+    color: black;
+}
+
+.logo-link:hover {
+    color: #007bff;
+    text-decoration: none;
 }
