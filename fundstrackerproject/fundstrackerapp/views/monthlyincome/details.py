@@ -26,8 +26,12 @@ def income_details(request, income_id):
             "actual_method" in form_data
             and form_data["actual_method"] == "PUT"
         ):
+            total = form_data['total']
+            split_total = total.split(',')
+            new_total = ''.join(split_total)
+
             income_source.name = form_data['name']
-            income_source.total = form_data['total']
+            income_source.total = new_total
             income_source.save()
 
             return redirect(reverse('fundstrackerapp:account'))

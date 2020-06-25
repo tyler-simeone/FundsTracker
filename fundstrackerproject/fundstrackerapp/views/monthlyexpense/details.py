@@ -26,8 +26,12 @@ def expense_details(request, expense_id):
             "actual_method" in form_data
             and form_data["actual_method"] == "PUT"
         ):
+            total = form_data['total']
+            split_total = total.split(',')
+            new_total = ''.join(split_total)
+
             monthly_expense.name = form_data['name']
-            monthly_expense.total = form_data['total']
+            monthly_expense.total = new_total
             monthly_expense.save()
 
             return redirect(reverse('fundstrackerapp:account'))
