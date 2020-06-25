@@ -11,6 +11,15 @@ def goal_completed(request, goal_id):
             
         if (
             "actual_method" in form_data
+            and form_data["actual_method"] == "DELETE"
+        ):
+            goal = FinancialGoal.objects.get(pk=goal_id)
+            goal.delete()
+
+            return redirect(reverse('fundstrackerapp:goal_completed_list'))
+
+        if (
+            "actual_method" in form_data
             and form_data["actual_method"] == "PUT"
         ):
             goal = FinancialGoal.objects.get(pk=goal_id)
