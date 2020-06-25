@@ -6,6 +6,9 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def goal_completed_list(request):
 
+    # get all financial goals whose is_completed field is True
+    # and pass them to the completed list template
+
     if request.method == 'GET':
 
         completed_goals = FinancialGoal.objects.filter(user=request.user.id, is_completed=1)

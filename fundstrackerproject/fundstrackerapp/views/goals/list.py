@@ -7,6 +7,13 @@ import datetime
 @login_required
 def goal_list(request):
 
+    # getting all journal entries, then getting all financial goals
+    # for the user that have not been completed, then separating past
+    # vs present goals, and then passing all present goals and journal
+    # entries into the current goal list template. Also added a new
+    # property onto each goal object to know how many journal entries
+    # belong to that object.
+
     if request.method == 'GET':
 
         journal_entries = JournalEntry.objects.filter(user=request.user.id)

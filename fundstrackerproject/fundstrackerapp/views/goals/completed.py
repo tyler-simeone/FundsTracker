@@ -6,6 +6,9 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def goal_completed(request, goal_id):
 
+    # will delete or edit the goal to mark it as completed
+    # based on the actual method being posted from the form
+
     if request.method == 'POST':
         form_data = request.POST
             
