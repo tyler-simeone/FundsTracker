@@ -19,6 +19,8 @@
 .completed_goal__container {
     border-bottom: 1px solid lightgray;
     margin-bottom: 5px;
+    margin-top: 15px;
+    margin-left: -37px;
 }
 
 .nav_links {
