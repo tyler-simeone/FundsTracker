@@ -25,16 +25,24 @@ def income_list(request):
         form_data = request.POST
 
         if ("expense" in form_data):
+            total = form_data['total']
+            split_total = total.split(',')
+            new_total = ''.join(split_total)
+
             new_expense = MonthlyExpense.objects.create(
                 name = form_data['name'],
-                total = form_data['total'],
+                total = new_total,
                 user_id = request.user.id
             )
         
         else:
+            total = form_data['total']
+            split_total = total.split(',')
+            new_total = ''.join(split_total)
+
             new_income = MonthlyIncome.objects.create(
                 name = form_data['name'],
-                total = form_data['total'],
+                total = new_total,
                 user_id = request.user.id
             )        
 
