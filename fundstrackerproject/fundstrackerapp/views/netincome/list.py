@@ -10,9 +10,6 @@ def net_income_list(request):
         all_incomes = MonthlyIncome.objects.filter(user=request.user.id)
         all_expenses = MonthlyExpense.objects.filter(user=request.user.id)
 
-        # CONSIDER making income and expense fields in models CharFields and then 
-        # turning them into ints here for the math. Would make dealing with commas
-        # much easer I think.
         total_income = 0
         total_expense = 0
 
