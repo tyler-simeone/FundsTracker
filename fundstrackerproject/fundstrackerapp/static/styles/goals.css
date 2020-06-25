@@ -1,15 +1,10 @@
-/* .current_goals_list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
-
 .header_nav_links__container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Applies to current and completed goal list templates  */
 .goal_list__container {
     margin-top: 10px;
     display: flex;
@@ -17,11 +12,11 @@
 }
 
 /* for completed goal list template */
-.completed_goals__container {
+/* .completed_goals__container {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+} */
 
 .completed_goal__container {
     border-bottom: 1px solid lightgray;
