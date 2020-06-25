@@ -1,8 +1,38 @@
+.site-nav {
+    border-bottom: 2px solid rgb(0, 110, 255);
+    height: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 2em;
+    margin-left: 20px;
+}
+
+.tagline {
+    font-size: .5em;
+    font-style: italic;
+    color: rgba(41, 39, 39, 0.486);
+}
+
+.navList__container {
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
 .navList {
     display: flex;
+    justify-content: flex-end;
 }
 
 li {
     list-style-type: none;
     margin-right: 7px;
+}
+
+.nav_link:hover {
+    text-decoration: none;
+    color: rgb(0, 66, 209);
 }
