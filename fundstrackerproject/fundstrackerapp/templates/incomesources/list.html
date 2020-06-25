@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block content %}
+    {% load humanize %}
     <div class="account__container">
         <section class="user_info">
             {% if user.first_name and user.last_name %}
@@ -47,7 +48,7 @@
                 <div class="income_source__container">
                 {% for income in all_incomes %}
                     <a href="{% url 'fundstrackerapp:income_edit_form' income.id %}">
-                        <li>{{ income.name }}: {{ income.total }}</li>
+                        <li>{{ income.name }}: ${{ income.total|intcomma }}</li>
                     </a>
                 {% endfor %}
                 </div>
@@ -65,7 +66,7 @@
                 <div class="monthly_expense__container">
                 {% for expense in all_expenses %}
                     <a href="{% url 'fundstrackerapp:expense_edit_form' expense.id %}">
-                        <li>{{ expense.name }}: {{ expense.total }}</li>
+                        <li>{{ expense.name }}: ${{ expense.total|intcomma }}</li>
                     </a>
                 {% endfor %}
                 </div>

@@ -9,6 +9,8 @@ def income_list(request):
 
     if request.method == 'GET':
         all_incomes = MonthlyIncome.objects.filter(user=request.user.id)
+                
+
         all_expenses = MonthlyExpense.objects.filter(user=request.user.id)
         user = User.objects.get(pk=request.user.id)
 
