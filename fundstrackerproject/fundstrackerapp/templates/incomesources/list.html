@@ -17,7 +17,7 @@
             <div class="name_container">
                 <form action="{% url 'fundstrackerapp:add_name' user.id %}" method="post">
                     {% csrf_token %}
-                    <label for="name">Name:</label>
+                    <label for="name"><h2>Name:</h2></label>
                     <div class="name_input_button__container">
                         <input class="form-control" type="text" id="name" name="name"></input>
                         <button class="btn btn-primary btn-sm submit" type="submit">

@@ -6,6 +6,7 @@
 
 .name_input_button__container {
     display: flex;
+    margin-bottom: 10px;
 }
 
 .submit {
