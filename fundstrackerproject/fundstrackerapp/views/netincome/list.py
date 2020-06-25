@@ -22,7 +22,11 @@ def net_income_list(request):
 
         net_income = total_income - total_expense
 
-
+        new_net_income_str = ''
+        if net_income < 0:
+            net_income_str = str(net_income)
+            new_net_income_str = net_income_str[1:]
+            print(new_net_income_str)
 
         # Now need to filter out past goals.. need to only reflect current data
 
@@ -153,6 +157,7 @@ def net_income_list(request):
         
         context = {
             'net_income': net_income,
+            'new_net_income_str': new_net_income_str,
             'one_month_progress_percentage': one_month_progress_percentage,
             'three_month_progress_percentage': three_month_progress_percentage,
             'six_month_progress_percentage': six_month_progress_percentage,
