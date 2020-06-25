@@ -4,10 +4,17 @@ from django.contrib.auth.decorators import login_required
 from fundstrackerapp.models import MonthlyExpense
 
 def get_monthly_expense(expense_id):
+
+    # returns a monthly expense object based on expense_id arg
+
     return MonthlyExpense.objects.get(pk=expense_id)
 
 @login_required
 def expense_details(request, expense_id):
+
+    # deletes expense if actual method in the form contains
+    # DELETE value, and editing the expense's name and new
+    # cost value if the actual method contains PUT value
     
     monthly_expense = get_monthly_expense(expense_id)
 
