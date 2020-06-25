@@ -22,15 +22,17 @@
           <label for="entry">Entry:</label>
           <textarea class="form-control" id="entry" type="text" name="entry"></textarea>
       </fieldset>
-      <fieldset>
-          <label for="goal">Attach to Goal: </label>
-          <select class="form-control" id="goal" name="goal">
-            <option hidden disabled selected value> -- select an option -- </option>
-            {% for goal in current_goals %}
-            <option value="{{ goal.id }}">{{ goal.goal }}</option>
-            {% endfor %}
-          </select>
-      </fieldset>
+      {% if current_goals %}
+        <fieldset>
+            <label for="goal">Attach to Goal: </label>
+            <select class="form-control" id="goal" name="goal" required>
+                <option hidden disabled selected value> -- select an option -- </option>
+                {% for goal in current_goals %}
+                <option value="{{ goal.id }}">{{ goal.goal }}</option>
+                {% endfor %}
+            </select>
+        </fieldset>
+      {% endif %}
 
        <input class="btn btn-primary btn-sm" type="submit" value="Submit" />
     </form>

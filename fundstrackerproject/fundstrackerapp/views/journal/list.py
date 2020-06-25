@@ -23,11 +23,23 @@ def journal_list(request):
       
     elif request.method == 'POST':
         form_data = request.POST
+        form_data_dict = dict(form_data)
+
+        print(len(form_data_dict))
+
+        if len(form_data_dict) == 3:
         
-        new_entry = JournalEntry.objects.create(
-            entry = form_data['entry'],
-            user_id = request.user.id, 
-            financial_goal_id = form_data['goal']
-        )        
+            new_entry = JournalEntry.objects.create(
+                entry = form_data['entry'],
+                user_id = request.user.id, 
+                financial_goal_id = form_data['goal']
+            )        
+
+        else:
+
+            new_entry = JournalEntry.objects.create(
+                entry = form_data['entry'],
+                user_id = request.user.id
+            )
 
         return redirect(reverse('fundstrackerapp:journal_list'))
