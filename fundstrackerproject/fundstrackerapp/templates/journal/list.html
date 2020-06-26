@@ -23,6 +23,11 @@
 
         <section class="journal_entries">
             <h1 class="entries__header">Journal Entries:</h1>
+            <div class="submit_btn__container">
+                <a href="{% url 'fundstrackerapp:journal_entry_form' %}">
+                    <button class="btn btn-primary btn-sm add_entry_btn">Add Journal Entry</button>
+                </a>
+            </div>
             <ul>
                 {% for entry in all_entries %}
                 <div class="journal_entry__container">
@@ -44,9 +49,6 @@
                 </div>
                 {% endfor %}
             </ul>
-            <a href="{% url 'fundstrackerapp:journal_entry_form' %}">
-                <button class="btn btn-primary btn-sm">Add Journal Entry</button>
-            </a>
         </section>
     <div>
 {% endblock %}

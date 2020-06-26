@@ -3,8 +3,8 @@
       "pk": 1,
       "model": "fundstrackerapp.monthlyexpense",
       "fields": {
-        "name": "Mortgage",
-        "total": 1500.00,
+        "name": "Dining Out",
+        "total": 100.00,
         "user_id": 1
       }
     },
@@ -12,8 +12,8 @@
       "pk": 2,
       "model": "fundstrackerapp.monthlyexpense",
       "fields": {
-        "name": "Home utilities",
-        "total": 500.75,
+        "name": "Card payment",
+        "total": 500.00,
         "user_id": 1
       }
     },
@@ -21,8 +21,35 @@
       "pk": 3,
       "model": "fundstrackerapp.monthlyexpense",
       "fields": {
-        "name": "Home Insurance",
-        "total": 150.00,
+        "name": "Mortgage Payment",
+        "total": 1500.00,
+        "user_id": 1
+      }
+    },
+    {
+      "pk": 4,
+      "model": "fundstrackerapp.monthlyexpense",
+      "fields": {
+        "name": "Insurance Payment",
+        "total": 500.00,
+        "user_id": 1
+      }
+    },
+    {
+      "pk": 5,
+      "model": "fundstrackerapp.monthlyexpense",
+      "fields": {
+        "name": "HELOC Payment",
+        "total": 250.00,
+        "user_id": 1
+      }
+    },
+    {
+      "pk": 6,
+      "model": "fundstrackerapp.monthlyexpense",
+      "fields": {
+        "name": "Emergency Fund Contribution",
+        "total": 2700.00,
         "user_id": 1
       }
     }

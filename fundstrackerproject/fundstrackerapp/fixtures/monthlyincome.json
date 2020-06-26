@@ -3,8 +3,8 @@
       "pk": 1,
       "model": "fundstrackerapp.monthlyincome",
       "fields": {
-        "name": "Main job",
-        "total": 6000.00,
+        "name": "Programming Salary",
+        "total": 5000.00,
         "user_id": 1
       }
     },
@@ -12,18 +12,9 @@
       "pk": 2,
       "model": "fundstrackerapp.monthlyincome",
       "fields": {
-        "name": "Side hustle 1",
-        "total": 500.00,
+        "name": "Stocks",
+        "total": 1000.00,
         "user_id": 1
-      }
-    },
-    {
-      "pk": 3,
-      "model": "fundstrackerapp.monthlyincome",
-      "fields": {
-        "name": "Side hustle 2",
-        "total": 150.00,
-        "user_id": 2
       }
     }
   ]

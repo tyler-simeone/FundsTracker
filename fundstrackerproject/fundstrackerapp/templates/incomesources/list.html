@@ -14,11 +14,16 @@
                 <h2>Name:</h2>
                 <p>{{ user.first_name }} {{ user.last_name }}</p>
             </div>
+            {% elif user.first_name %}
+            <div class="name_container">
+                <h2>Name:</h2>
+                <p>{{ user.first_name }}</p>
+            </div>
             {% else %}
             <div class="name_container">
                 <form action="{% url 'fundstrackerapp:add_name' user.id %}" method="post">
                     {% csrf_token %}
-                    <label for="name"><h2>Name:</h2></label>
+                        <label for="name"><h2>Name:</h2></label>
                     <div class="name_input_button__container">
                         <input class="form-control" type="text" id="name" name="name"></input>
                         <button class="btn btn-primary btn-sm submit" type="submit">
@@ -38,7 +43,9 @@
         </section>
 
         <section class="income_sources">
-            <h2>Income Sources:</h2>
+            <div class="income_name__container">
+                <h2>Income Sources:</h2>
+            </div>
             <div class="button__container">
                 <a href="{% url 'fundstrackerapp:income_form' %}">
                     <button class="btn btn-primary btn-sm">Add Income Source</button>
@@ -56,7 +63,9 @@
         </section>
 
         <section class="monthly_expenses">
-            <h2>Monthly Expenses:</h2>
+            <div class="expense_name__container">
+                <h2>Monthly Expenses:</h2>
+            </div>
             <div class="button__container">
                 <a href="{% url 'fundstrackerapp:expense_form' %}">
                     <button class="btn btn-primary btn-sm">Add Expense</button>
