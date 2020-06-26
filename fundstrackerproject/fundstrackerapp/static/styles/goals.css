@@ -13,12 +13,13 @@
 
 /* Applies only to completed goal list template */
 .back_btn {
-    margin-top: 10px;
+    margin: 10px 0 15px 0;
 }
 
 /* Applies only to completed goal list template */
 .completed_goal__container {
     display: flex;
+    width: 300px;
 }
 
 /* Applies only to completed goal list template */
@@ -56,6 +57,7 @@
 .goal__container {
     margin-top: 15px;
     margin-left: -37px;
+    width: 300px;
 }
 
 .buttons__container {
