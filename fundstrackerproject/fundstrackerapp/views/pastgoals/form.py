@@ -5,6 +5,9 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def past_goal_edit_form(request, goal_id):
+
+    # renders form to re-open a past goal, with the
+    # goal passed into the form being based on the goal_id
     
     financial_goal = FinancialGoal.objects.get(pk=goal_id)
 
