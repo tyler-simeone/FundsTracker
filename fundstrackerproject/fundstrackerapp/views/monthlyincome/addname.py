@@ -15,12 +15,20 @@ def add_name(request, user_id):
         form_data = request.POST
         
         full_name = form_data['name']
-        first_name = full_name.split()[0]
-        last_name = full_name.split()[1]
+        full_name_list = full_name.split()
+        first_name = full_name_list[0]
 
-        user = User.objects.get(pk=user_id)
-        user.first_name = first_name
-        user.last_name = last_name
-        user.save()
+        if len(full_name_list) == 2:
+            last_name = full_name.split()[1]
+
+            user = User.objects.get(pk=user_id)
+            user.first_name = first_name
+            user.last_name = last_name
+            user.save()
+        
+        else:
+            user = User.objects.get(pk=user_id)
+            user.first_name = first_name
+            user.save()
 
         return redirect(reverse('fundstrackerapp:account'))

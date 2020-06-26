@@ -15,21 +15,23 @@
         </ul>
     {% endif %}
 
-    <form action="{% url 'fundstrackerapp:register' %}" method="post">
-      {% csrf_token %}
-      <fieldset>
-          <label for="username">Username: </label>
-          <input id="username" type="text" name="username">
-      </fieldset>
-      <fieldset>
-          <label for="password">Password: </label>
-          <input id="password" type="password" name="password">
-      </fieldset>
-      <fieldset>
-          <label for="password_confirmation">Password Confirmation: </label>
-          <input id="password_confirmation" type="password" name="password_confirmation">
-      </fieldset>
+    <div class="register_form__container">
+        <form action="{% url 'fundstrackerapp:register' %}" method="post">
+        {% csrf_token %}
+        <fieldset>
+            <label for="username">Username: </label>
+            <input class="form-control" id="username" type="text" name="username">
+        </fieldset>
+        <fieldset>
+            <label for="password">Password: </label>
+            <input class="form-control" id="password" type="password" name="password">
+        </fieldset>
+        <fieldset>
+            <label for="password_confirmation">Password Confirmation: </label>
+            <input class="form-control" id="password_confirmation" type="password" name="password_confirmation">
+        </fieldset>
 
-       <input type="submit" value="Submit" />
-    </form>
+        <input class="btn btn-primary btn-sm submit_btn" type="submit" value="Submit" />
+        </form>
+    </div>
 {% endblock %}
