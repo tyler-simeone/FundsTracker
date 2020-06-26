@@ -4,13 +4,24 @@
     align-items: center;
 }
 
+.header__container {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    font-size: 28px;
+}
+
 .journal_entries__container {
     margin-top: 20px;
 }
 
 .entry__container {
+    margin-top: 10px;
     margin-bottom: 10px;
     border-bottom: 1px solid lightgray;
+    width: 300px;
 }
 
 .journal_entry {

@@ -30,7 +30,8 @@ def journal_entry_details(request, goal_id):
         template = 'journal/details.html'
         context = {
             'user': user,
-            'journal_entries': journal_entries
+            'journal_entries': journal_entries,
+            'financial_goal': financial_goal
         }
 
         return render(request, template, context)

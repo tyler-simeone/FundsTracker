@@ -11,6 +11,9 @@
         <a href="{% url 'fundstrackerapp:goals' %}"><button class="btn btn-outline-primary btn-sm">Back to Goals</button></a>
 
         <section class="journal_entries__container">
+            <div class="header__container">
+                <h1 class="header">{{ financial_goal.goal }}</h1>
+            </div>
             <ul>
                 {% for entry in journal_entries %}
                     <div class="entry__container">
