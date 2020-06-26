@@ -1,3 +1,7 @@
+.back_btn {
+    margin: 10px 0 15px 0;
+}
+
 .header {
     display: flex;
     justify-content: center;
@@ -11,4 +15,8 @@
 
 .form-control {
     margin-bottom: 5px;
+}
+
+.submit_btn {
+    margin-top: 3px;
 }

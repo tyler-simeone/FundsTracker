@@ -7,11 +7,14 @@
 }
 
 .logo {
+    display: flex;
     font-size: 2em;
     margin-left: 20px;
 }
 
 .tagline {
+    margin-top: 18px;
+    margin-left: 7px;
     font-size: .5em;
     font-style: italic;
     color: rgba(41, 39, 39, 0.486);
