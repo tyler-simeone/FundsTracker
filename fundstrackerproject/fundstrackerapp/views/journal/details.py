@@ -15,8 +15,8 @@ def journal_entry_details(request, goal_id):
 
     # gets all journal entries that belong to a specific
     # financial goal, based on the goal_id argument, then
-    # passing those matching entries into the template,
-    # along with data for the logged-in user
+    # passing those matching entries and financial goal
+    # into the template, along with data for the logged-in user
     #       runs when entries btn clicked from current
     #       goals list
     
@@ -30,7 +30,8 @@ def journal_entry_details(request, goal_id):
         template = 'journal/details.html'
         context = {
             'user': user,
-            'journal_entries': journal_entries
+            'journal_entries': journal_entries,
+            'financial_goal': financial_goal
         }
 
         return render(request, template, context)
