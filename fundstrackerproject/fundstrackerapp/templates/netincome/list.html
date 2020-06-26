@@ -56,11 +56,14 @@ var myChart = new Chart(ctx, {
 </script>
 
 {% block content %}
+{% load humanize %}
     <div class="homepage__container">
         <section class="expected_net_income">
             <h1>Monthly Net Income:</h1>
             <div class="net_income__container">
-                <div class="net_income__total {% if net_income > 0 %} text-success {% elif net_income == 0%}text-body{% else %}text-danger{% endif %}">${{ net_income }}</div>
+                <div class="net_income__total {% if net_income > 0 %} text-success {% elif net_income == 0%}text-body{% else %}text-danger{% endif %}">
+                    {% if net_income > 0 %}${{ net_income|intcomma }}{% elif net_income < 0%} (${{ new_net_income_str|intcomma }}) {% endif %}
+                </div>
                 <a class="details__button" href="{% url 'fundstrackerapp:netincome_details' %}">
                     <button class="btn btn-outline-primary btn-sm">Details</button>
                 </a>

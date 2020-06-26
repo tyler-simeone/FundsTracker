@@ -4,6 +4,10 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
 
+# these views will render the goal form template and
+# the edit form view will pass in a goal object so the 
+# form knows to display values to be edited when in edit mode
+
 @login_required
 def goal_form(request):
 

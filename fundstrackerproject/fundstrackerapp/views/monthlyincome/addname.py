@@ -6,6 +6,10 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def add_name(request, user_id):
 
+    # splits the full name value from the form input field
+    # into first and last for the DB, then updates the first
+    # and last name fields for the logged-in user
+
     if request.method == 'POST':
 
         form_data = request.POST

@@ -4,10 +4,17 @@ from django.contrib.auth.decorators import login_required
 from fundstrackerapp.models import FinancialGoal
 
 def get_financial_goal(goal_id):
+
+    # returns one financial goal based on the PK
+    # passed in as an argument
+
     return FinancialGoal.objects.get(pk=goal_id)
 
 @login_required
 def goal_details(request, goal_id):
+    
+    # update or delete a financial goal in the DB based
+    # on actual method in the form making the POST request
     
     goal = get_financial_goal(goal_id)
 

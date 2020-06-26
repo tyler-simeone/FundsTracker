@@ -7,6 +7,9 @@ import datetime
 @login_required
 def past_goals_list(request):
 
+    # filters for only past goals for the logged-in user,
+    # passes in those past goals to the past goal list template
+
     if request.method == 'GET':
 
         users_goals = FinancialGoal.objects.filter(user=request.user.id)
