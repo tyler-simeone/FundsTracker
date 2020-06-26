@@ -16,6 +16,7 @@
     {% endif %}
 
     <div class="register_form__container">
+        <h2>Register</h2>
         <form action="{% url 'fundstrackerapp:register' %}" method="post">
         {% csrf_token %}
         <fieldset>
