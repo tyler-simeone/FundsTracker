@@ -6,6 +6,13 @@ import datetime
 @login_required
 def net_income_list(request):
 
+    # getting all incomes and expenses for the logged-in user,
+    # finding the difference between the two totals to get net
+    # income, then filtering past vs present goals, then getting
+    # percentage of total current goals vs total completed goals,
+    # then passing the net-income, the negatively-formatted net-income,
+    # and the percentages for all timeframes into the homepage template
+
     if request.method == 'GET':
 
         all_incomes = MonthlyIncome.objects.filter(user=request.user.id)
@@ -26,9 +33,6 @@ def net_income_list(request):
         if net_income < 0:
             net_income_str = str(net_income)
             new_net_income_str = net_income_str[1:]
-            print(new_net_income_str)
-
-        # Now need to filter out past goals.. need to only reflect current data
 
         financial_goals = FinancialGoal.objects.filter(user=request.user.id)
         current_goals = []

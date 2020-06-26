@@ -5,6 +5,11 @@ from fundstrackerapp.models import MonthlyIncome, MonthlyExpense
 @login_required
 def net_income_details(request):
 
+    # getting all incomes and expenses for the logged-in user,
+    # finding the difference between the two totals to get net
+    # income, passing in the total income, expenses and the net
+    # bottom-line so user can see the calculations
+
     if request.method == 'GET':
 
         all_incomes = MonthlyIncome.objects.filter(user=request.user.id)
