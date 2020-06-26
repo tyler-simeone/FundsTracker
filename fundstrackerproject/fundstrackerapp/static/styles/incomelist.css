@@ -4,6 +4,16 @@
     align-items: center;
 }
 
+.income_name__container {
+    display: flex;
+    justify-content: center;
+}
+
+.expense_name__container {
+    display: flex;
+    justify-content: center;
+}
+
 .name_input_button__container {
     display: flex;
     margin-bottom: 10px;
@@ -20,9 +30,15 @@
 
 .income_source__container {
     margin-top: 10px;
+    width: 300px;
 }
 
 .monthly_expense__container {
     margin-top: 10px;
-    margin-left: 19px;
+    width: 300px;
+}
+
+a:hover {
+    text-decoration: none;
+    color: rgb(0, 14, 204);
 }
