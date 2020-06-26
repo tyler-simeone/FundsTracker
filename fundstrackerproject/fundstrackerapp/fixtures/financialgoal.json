@@ -3,9 +3,9 @@
         "pk": 1,
         "model": "fundstrackerapp.financialgoal",
         "fields": {
-            "goal": "Decrease Expense 1",
+            "goal": "$100 For dining out this month",
             "timeframe": 1,
-            "created_at": "2020-06-15 00:00:00",
+            "created_at": "2020-06-26 00:00:00",
             "user_id": 1
         }
     },
@@ -13,9 +13,9 @@
         "pk": 2,
         "model": "fundstrackerapp.financialgoal",
         "fields": {
-            "goal": "Hit Monthly Income Target",
+            "goal": "Card payment",
             "timeframe": 1,
-            "created_at": "2020-08-19 00:00:00",
+            "created_at": "2020-06-26 00:00:00",
             "user_id": 1
         }
     },
@@ -23,9 +23,9 @@
         "pk": 3,
         "model": "fundstrackerapp.financialgoal",
         "fields": {
-            "goal": "Start an Emergency Fund",
-            "timeframe": 3,
-            "created_at": "2020-09-08 00:00:00",
+            "goal": "Mortgage payment",
+            "timeframe": 1,
+            "created_at": "2020-06-26 00:00:00",
             "user_id": 1
         }
     },
@@ -33,9 +33,9 @@
         "pk": 4,
         "model": "fundstrackerapp.financialgoal",
         "fields": {
-            "goal": "100% Funded Emergency Fund",
-            "timeframe": 6,
-            "created_at": "2020-09-18 00:00:00",
+            "goal": "Insurance payment",
+            "timeframe": 1,
+            "created_at": "2020-06-26 00:00:00",
             "user_id": 1
         }
     },
@@ -43,9 +43,59 @@
         "pk": 5,
         "model": "fundstrackerapp.financialgoal",
         "fields": {
-            "goal": "50% Debt-Free",
+            "goal": "Save 30% of monthly income",
+            "timeframe": 1,
+            "created_at": "2020-06-26 00:00:00",
+            "user_id": 1
+        }
+    },
+    {
+        "pk": 6,
+        "model": "fundstrackerapp.financialgoal",
+        "fields": {
+            "goal": "Pay off remaining card balance",
+            "timeframe": 3,
+            "created_at": "2020-06-26 00:00:00",
+            "user_id": 1
+        }
+    },
+    {
+        "pk": 7,
+        "model": "fundstrackerapp.financialgoal",
+        "fields": {
+            "goal": "Start emergency fund",
+            "timeframe": 3,
+            "created_at": "2020-06-26 00:00:00",
+            "user_id": 1
+        }
+    },
+    {
+        "pk": 8,
+        "model": "fundstrackerapp.financialgoal",
+        "fields": {
+            "goal": "Emergency fund 50% funded",
+            "timeframe": 6,
+            "created_at": "2020-06-26 00:00:00",
+            "user_id": 1
+        }
+    },
+    {
+        "pk": 9,
+        "model": "fundstrackerapp.financialgoal",
+        "fields": {
+            "goal": "Total debt down 25%",
             "timeframe": 12,
-            "created_at": "2020-12-15 00:00:00",
+            "created_at": "2020-06-26 00:00:00",
+            "user_id": 1
+        }
+    },
+    {
+        "pk": 10,
+        "model": "fundstrackerapp.financialgoal",
+        "fields": {
+            "goal": "30% of annual salary saved",
+            "timeframe": 12,
+            "created_at": "2020-06-26 00:00:00",
             "user_id": 1
         }
     }
