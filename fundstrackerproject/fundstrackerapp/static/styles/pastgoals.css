@@ -23,6 +23,10 @@
     margin-left: -37px;
 }
 
+.completed {
+    color: green;
+}
+
 .button__container {
     display: flex;
 }

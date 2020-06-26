@@ -22,7 +22,7 @@
                         {% for goal in past_goals %}
                             {% if goal.timeframe == 1 %}
                                 <div class="past_goal__container">
-                                    <li>{{ goal.goal }} {% if goal.is_completed %}<span>Completed</span>{% endif %} </li>
+                                    <li>{{ goal.goal }} {% if goal.is_completed %}<span class="text-success">Completed</span>{% endif %} </li>
                                     <span>Created: {{ goal.created_at }}</span>
                                     <div class="button__container">
                                         {% if goal.is_completed != 1%}<a href="{% url 'fundstrackerapp:past_goal_edit_form' goal.id %}"><button class="btn btn-primary btn-sm" >Re-open Goal</button></a>{% endif %}
@@ -45,7 +45,7 @@
                     {% for goal in past_goals %}
                         {% if goal.timeframe == 3 %}
                             <div class="past_goal__container">
-                                <li>{{ goal.goal }} {% if goal.is_completed %}<span>Completed</span>{% endif %} </li>
+                                <li>{{ goal.goal }} {% if goal.is_completed %}<span class="text-success">Completed</span>{% endif %} </li>
                                 <span>Created: {{ goal.created_at }}</span>
                                 <div class="button__container">
                                     {% if goal.is_completed != 1%}<a href="{% url 'fundstrackerapp:past_goal_edit_form' goal.id %}"><button class="btn btn-primary btn-sm" >Re-open Goal</button></a>{% endif %}
@@ -67,7 +67,7 @@
                     {% for goal in past_goals %}
                         {% if goal.timeframe == 6 %}
                             <div class="past_goal__container">
-                                <li>{{ goal.goal }} {% if goal.is_completed %}<span>Completed</span>{% endif %} </li>
+                                <li>{{ goal.goal }} {% if goal.is_completed %}<span class="text-success">Completed</span>{% endif %} </li>
                                 <span>Created: {{ goal.created_at }}</span>
                                 <div class="button__container">
                                     {% if goal.is_completed != 1%}<a href="{% url 'fundstrackerapp:past_goal_edit_form' goal.id %}"><button class="btn btn-primary btn-sm" >Re-open Goal</button></a>{% endif %}
@@ -89,7 +89,7 @@
                     {% for goal in past_goals %}
                         {% if goal.timeframe == 12 %}
                             <div class="past_goal__container">
-                                <li>{{ goal.goal }} {% if goal.is_completed %}<span>Completed</span>{% endif %} </li>
+                                <li>{{ goal.goal }} {% if goal.is_completed %}<span class="text-success">Completed</span>{% endif %} </li>
                                 <span>Created: {{ goal.created_at }}</span>
                                 <div class="button__container">
                                     {% if goal.is_completed != 1%}<a href="{% url 'fundstrackerapp:past_goal_edit_form' goal.id %}"><button class="btn btn-primary btn-sm" >Re-open Goal</button></a>{% endif %}
