@@ -3,45 +3,50 @@
         "pk": 1,
         "model": "fundstrackerapp.journalentry",
         "fields": {
-            "entry": "First journal entry",
-            "created_at": "2020-06-15 00:00:00",
-            "user_id": 1
+            "entry": "Try to not spend more than $100 dining out this month.",
+            "created_at": "2020-06-26 00:00:00",
+            "user_id": 1,
+            "financial_goal_id": 1
         }
     },
     {
         "pk": 2,
         "model": "fundstrackerapp.journalentry",
         "fields": {
-            "entry": "Second journal entry",
-            "created_at": "2020-06-15 00:00:00",
-            "user_id": 1
+            "entry": "Try to do this! I think it's possible, will need to be very frugal.",
+            "created_at": "2020-06-26 00:00:00",
+            "user_id": 1,
+            "financial_goal_id": 5
         }
     },
     {
         "pk": 3,
         "model": "fundstrackerapp.journalentry",
         "fields": {
-            "entry": "Third journal entry",
-            "created_at": "2020-06-15 00:00:00",
-            "user_id": 1
+            "entry": "If it doesn't work out, at least save 20%!",
+            "created_at": "2020-06-26 00:00:00",
+            "user_id": 1,
+            "financial_goal_id": 5
         }
     },
     {
         "pk": 4,
         "model": "fundstrackerapp.journalentry",
         "fields": {
-            "entry": "Fourth journal entry",
-            "created_at": "2020-06-15 00:00:00",
-            "user_id": 1
+            "entry": "Will need to be very frugal for this one!",
+            "created_at": "2020-06-26 00:00:00",
+            "user_id": 1,
+            "financial_goal_id": 8
         }
     },
     {
         "pk": 5,
         "model": "fundstrackerapp.journalentry",
         "fields": {
-            "entry": "Fifth journal entry",
-            "created_at": "2020-06-15 00:00:00",
-            "user_id": 1
+            "entry": "Will greatly reduce monthly expenses!!",
+            "created_at": "2020-06-26 00:00:00",
+            "user_id": 1,
+            "financial_goal_id": 9
         }
     }
 ]
