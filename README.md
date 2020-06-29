@@ -1,5 +1,5 @@
 # FundsTracker
-Repo for my Back-end / Full-stack final capstone at Nashville Software School
+FundsTracker is a user-friendly budgeting app that allows users to keep track of their incomes and expenses, as well as create financial goals for themselves for different time horizons, with the option to create journal entries for those goals. Create and accomplish financial goals and see your progress update realtime on the homepage!
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
