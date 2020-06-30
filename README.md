@@ -47,8 +47,7 @@ brew install python3
 git clone https://github.com/tyler-simeone/FundsTracker
 ```
 2. `cd` into the directory with `manage.py`
-3. Create your virtual environment:
-  * ```python -m venv fundstrackerEnv```
+3. Activate the virtual environment:
   * ```source ./fundstrackerEnv/bin/activate```
 4. Install dependencies:
   * `pip install -r requirements.txt`
