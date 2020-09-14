@@ -20,17 +20,20 @@
         <form action="{% url 'fundstrackerapp:register' %}" method="post">
         {% csrf_token %}
         <fieldset>
+            {{ form.username.errors }}
             <label for="username">Username: </label>
-            <input class="form-control" id="username" type="text" name="username">
+            {{ form.username }}
         </fieldset>
         <fieldset>
+            {{ form.password1.errors }}
             <label for="password">Password: </label>
-            <input class="form-control" id="password" type="password" name="password">
+            {{ form.password1 }}
         </fieldset>
         <fieldset>
+            {{ form.password2.errors }}
             <label for="password_confirmation">Password Confirmation: </label>
-            <input class="form-control" id="password_confirmation" type="password" name="password_confirmation">
-        </fieldset>
+            {{ form.password2 }}
+        </fieldset> 
 
         <input class="btn btn-primary btn-sm submit_btn" type="submit" value="Submit" />
         </form>
